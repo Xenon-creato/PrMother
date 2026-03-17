@@ -1,7 +1,8 @@
+
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-
+import ConsultButton from "@/components/consult-button";
 export const metadata: Metadata = {
   title: "Консультації | Інтимність без напруги",
   description:
@@ -345,16 +346,7 @@ export default function ConsultPage() {
 
           <p>Якщо відгукується - натисніть на кнопочку нижче!</p>
             <div className="mt-10 flex justify-center">
-              <Link
-                href="https://t.me/iryna_tabaka?text=Хочу%20замовити%20консультацію"
-                onClick={() => {
-                  // @ts-ignore
-                  window.fbq?.("track", "Lead");
-                }}
-                className="inline-flex items-center justify-center rounded-full bg-red-600 px-12 py-8 text-xl font-semibold text-white transition hover:bg-red-700"
-              >
-                ЗАРЕЄСТРУВАТИСЯ
-              </Link>
+              <ConsultButton />
             </div>
         </div>
       </section>
