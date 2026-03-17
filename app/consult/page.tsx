@@ -347,7 +347,11 @@ export default function ConsultPage() {
             <div className="mt-10 flex justify-center">
               <Link
                 href="https://t.me/iryna_tabaka?text=Хочу%20замовити%20консультацію"
-                className="inline-flex items-center justify-center rounded-full bg-red-800 px-12 py-6 text-xl font-semibold text-white transition hover:bg-red-700"
+                onClick={() => {
+                  // @ts-ignore
+                  window.fbq?.("track", "Lead");
+                }}
+                className="inline-flex items-center justify-center rounded-full bg-red-600 px-12 py-8 text-xl font-semibold text-white transition hover:bg-red-700"
               >
                 ЗАРЕЄСТРУВАТИСЯ
               </Link>
