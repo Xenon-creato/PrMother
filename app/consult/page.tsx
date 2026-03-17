@@ -318,7 +318,7 @@ export default function ConsultPage() {
           </ul>
 
           <p>
-            Консультація проводиться <strong>онлайн. Конфіденційно</strong> і делікатно.<strong>Вартість</strong>
+            Консультація проводиться <strong>онлайн. Конфіденційно </strong> і делікатно. <strong>Вартість</strong>
             650 грн., <strong>тривалість</strong> 45 хв.
           </p>
               <div className="flex justify-center py-4 md:py-6">
@@ -344,12 +344,20 @@ export default function ConsultPage() {
           </ul>
 
           <p>Якщо відгукується - натисніть на кнопочку нижче!</p>
+            <div className="mt-10 flex justify-center">
+              <Link
+                href="https://t.me/iryna_tabaka?text=Хочу%20замовити%20консультацію"
+                className="inline-flex items-center justify-center rounded-full bg-red-800 px-12 py-6 text-xl font-semibold text-white transition hover:bg-red-700"
+              >
+                ЗАРЕЄСТРУВАТИСЯ
+              </Link>
+            </div>
         </div>
       </section>
 
       <section
         id="booking"
-        className="mt-8 border-y border-neutral-200 bg-[#f5f5f5] text-neutral-900"
+        className="mt-8 bg-[#f5f5f5] text-neutral-900"
       >
         <div className="mx-auto max-w-5xl px-6 py-16 md:px-10 md:py-20">
           <div className="mx-auto max-w-4xl text-center">
@@ -361,7 +369,7 @@ export default function ConsultPage() {
 
               <p>Іноді одна розмова змінює вектор руху.</p>
               <div className="flex justify-center py-4 md:py-6">
-                <div className="w-full max-w-[320]">
+                <div className="w-full max-w-[320px]">
                   <Image
                     src="/images/Д.png"
                     alt=""
@@ -372,15 +380,6 @@ export default function ConsultPage() {
                 </div>
               </div>
               <p>Наважтеся, поки мовчання не стало звичкою!</p>
-            </div>
-
-            <div className="mt-10 flex justify-center">
-              <Link
-                href="https://t.me/iryna_tabaka?text=Хочу%20замовити%20консультацію"
-                className="inline-flex items-center justify-center rounded-full bg-red-800 px-12 py-6 text-xl font-semibold text-white transition hover:bg-red-700"
-              >
-                ЗАРЕЄСТРУВАТИСЯ
-              </Link>
             </div>
           </div>
         </div>
