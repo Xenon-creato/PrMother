@@ -318,7 +318,7 @@ export default function ConsultPage() {
           </ul>
 
           <p>
-            Консультація проводиться <strong>онлайн. Конфіденційно </strong> і делікатно. <strong>Вартість</strong>
+            Консультація проводиться <strong>онлайн. Конфіденційно </strong> і делікатно. <strong>Вартість </strong> 
             650 грн., <strong>тривалість</strong> 45 хв.
           </p>
               <div className="flex justify-center py-4 md:py-6">
