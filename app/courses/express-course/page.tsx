@@ -39,7 +39,6 @@ const authorPoints = [
   `вчитель симпто-термального методу розпізнавання плідності`,
   `тренер зі статевої та сексуальної грамотності з християнськими цінностями`,
   `член Української Асоціації Християнської Психології`,
-  `член Асоціації сексологів та сексотерапевтів України`,
   `катехит`,
   `щаслива дружина і мама 3 підлітків`,
 ];
@@ -372,7 +371,7 @@ export default function FormulaLoveDemoPage() {
           </h2>
 
           <div className="mt-10 text-5xl font-light text-[#16195a] md:text-6xl">
-            <s>850</s>   300₴
+            300₴  <s>850</s>   
           </div>
 
           <p className="mt-4 text-xl font-light text-[#16195a] md:text-2xl">
@@ -385,7 +384,7 @@ export default function FormulaLoveDemoPage() {
 
           <div className="mx-auto mt-10 max-w-[900px] rounded-[28px] border border-[#16195a]/8 bg-[#f7f5f1] p-6 md:p-8">
             <p className="text-2xl tracking-[0.22em] text-[#16195a]/60">
-              ГАРАНТІЇ
+              <strong>ГАРАНТІЇ</strong>
             </p>
             <p className="mt-4 text-base leading-8 text-[#1f1f1f]/85 md:text-lg">
               Якщо Ви переглянете всі уроки та візьмете участь в зустрічі, і при
@@ -419,7 +418,7 @@ export default function FormulaLoveDemoPage() {
         </div>
       </section>
       <section className="mx-auto max-w-[1100px] px-6 py-20 text-center md:px-10 md:py-24">
-        <SectionTitle>Є питання?</SectionTitle>
+        <SectionTitle>Є питання? </SectionTitle>
 
         <div className="mt-10 flex flex-col items-center gap-4">
           <a
