@@ -36,12 +36,12 @@ const audienceItems = [
 ];
 
 const authorPoints = [
-  `тренер зі статевої та сексуальної грамотності з християнськими цінностями`,
   `вчитель симпто-термального методу розпізнавання плідності`,
+  `тренер зі статевої та сексуальної грамотності з християнськими цінностями`,
   `член Української Асоціації Християнської Психології`,
   `член Асоціації сексологів та сексотерапевтів України`,
   `катехит`,
-  `щаслива дружина і мама 3 діток`,
+  `щаслива дружина і мама 3 підлітків`,
 ];
 
 const topics = [
@@ -63,13 +63,12 @@ const learningSteps = [
   `Після оплати Ви отримаєте запрошення перейти в Телеграм-канал, де на Вас уже чекає весь матеріал`,
   `Ви переглядаєте відео у зручний для Вас час самостійно, а ще краще - парою`,
   `Задаєте усі питання, що виникають`,
-  `Ми зустрічаємось на вебінарі в Zoom, обговорюємо усі питання`,
   `Після цього є можливість зустрітися з автором на 20-хвилинній безкоштовній консультації`,
 ];
 
 const reviews = [
   {
-    name: `Ірина Баран`,
+    name: `Ірина Б.`,
     text: `Пані Ірино, дякую за чудовий ознайомчий курс. Я нарешті все дослухала і розумію, що справді хочу продовження. Ви чудова, світла і дуже щира жінка, лекторка, вчитель Маю певні страхи, побоювання чи зможу все правильно опанувати і трохи бракує розуміння і підтримки чоловіка, але я знаю, що Господь може все перемінити, бачачи щирі прагнення і намірення. Розкажіть, будь ласка, як відбувається наступний етап? Яка вартість навчання та як відбувається наша комунікація?`,
   },
   {
@@ -124,7 +123,6 @@ function SectionTag() {
   return (
     <div className="mb-10 flex justify-center">
       <span className="rounded-full border border-[#16195a]/10 bg-white/70 px-4 py-2 text-sm tracking-[0.2em] text-[#16195a]/70 shadow-sm backdrop-blur">
-        All
       </span>
     </div>
   );
@@ -315,7 +313,7 @@ export default function FormulaLoveDemoPage() {
       <section className="mx-auto max-w-[1440px] px-6 py-20 md:px-10 md:py-24">
         <SectionTitle>Як відбувається навчання?</SectionTitle>
 
-        <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+        <div className="mt-14 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {learningSteps.map((step, index) => (
             <article
               key={step}
@@ -357,7 +355,7 @@ export default function FormulaLoveDemoPage() {
           </div>
 
           <div className="mx-auto mt-12 max-w-[1080px] rounded-[34px] border border-[#16195a]/8 bg-[#16195a] px-8 py-10 text-center text-white shadow-[0_20px_70px_rgba(12,18,48,0.14)] md:px-12">
-            <p className="text-2xl font-light leading-tight md:text-4xl">
+            <p className="text-xl font-light leading-tight md:text-4xl">
               Цей курс дасть Вам чітку картинку і складе все в один пазл, який
               допоможе зрозуміти – потрібно це Вам чи ні. Бо всі ті
               думки/сумніви/вагання, що живуть в голові, просто забирають і без
@@ -386,7 +384,7 @@ export default function FormulaLoveDemoPage() {
             </div>
 
           <div className="mx-auto mt-10 max-w-[900px] rounded-[28px] border border-[#16195a]/8 bg-[#f7f5f1] p-6 md:p-8">
-            <p className="text-sm tracking-[0.22em] text-[#16195a]/60">
+            <p className="text-2xl tracking-[0.22em] text-[#16195a]/60">
               ГАРАНТІЇ
             </p>
             <p className="mt-4 text-base leading-8 text-[#1f1f1f]/85 md:text-lg">
@@ -423,16 +421,12 @@ export default function FormulaLoveDemoPage() {
       <section className="mx-auto max-w-[1100px] px-6 py-20 text-center md:px-10 md:py-24">
         <SectionTitle>Є питання?</SectionTitle>
 
-        <p className="mx-auto mt-8 max-w-[700px] text-xl leading-relaxed text-[#111] md:text-2xl">
-          Залишились питання? Пишіть!
-        </p>
-
         <div className="mt-10 flex flex-col items-center gap-4">
           <a
             href="tel:+3800974083750"
             className="text-lg leading-8 text-[#16195a] transition-opacity duration-300 hover:opacity-70 md:text-xl"
           >
-            +380-0974083750
+            +380-097-408-37-50
           </a>
 
           <a

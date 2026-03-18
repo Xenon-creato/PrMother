@@ -19,7 +19,7 @@ const courses = [
   },
   {
     title: 'ДЕМО-ВЕРСІЯ "ФОРМУЛИ ЛЮБОВІ"',
-    href: "/courses/Express-course",
+    href: "/courses/express-course",
   },
   {
     title: "ПРО МЕНОПАУЗУ З ЛЮБОВ'Ю. ЯК ПІДГОТУВАТИСЯ І ЯК ПЕРЕЖИТИ.",
