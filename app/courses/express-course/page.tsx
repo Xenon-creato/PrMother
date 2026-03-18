@@ -1,510 +1,427 @@
-import Image from "next/image";
-export default function ExpressCoursePage() {
-  const heroPoints = [
-    "Ефективність методу за даними ВООЗ - 99,6%",
-    "Цей курс може назавжди змінити Ваше життя",
-  ];
+import type { ReactNode } from "react";
+import ExpressButton from "@/components/Express-button";
 
-  const reasons = [
-    {
-      title:
-        "Боїтесь чи уникаєте інтимних стосунків через страх непланованої вагітності",
-      description:
-        "Страх виникає там, де немає знань. Коли жінка не розуміє свої цикли, не знає, коли може завагітніти, а коли точно ні, вона боїться...",
-    },
-    {
-      title:
-        "Мрієте про якісні інтимні стосунки без презервативів, переривань та інших втручань",
-      description:
-        "Вивчивши метод розпізнавання плідності, можна жити без контрацепції! І при цьому - не боятися, не псувати своє здоров'я та отримувати задоволення!",
-    },
-    {
-      title:
-        'Хочете бути впевненою у своїх діях, а не "гадати на кавовій гущі"',
-      description:
-        "Ви чули про «природні методи», але не розумієте, як вони працюють і чи справді це можливо на них покладатися",
-    },
-    {
-      title:
-        "Якщо для Вас як віруючих людей, важливо жити без контрацепції",
-      description:
-        "Зокрема, вчення Католицької Церкви чітко говорить про незастосування засобів контрацепції.",
-    },
-    {
-      title: "Вагаєтесь, чи підійде Вам цей метод",
-      description:
-        "Зорієнтується, які дії треба виконувати та чи реалістично це у Вашій конкретній ситуації",
-    },
-    {
-      title: 'Хочете знайти "свого" вчителя',
-      description:
-        "Прослухані відео допоможуть зрозуміти, чи підходить Вам стиль подачі інформації та підхід Ірини Табаки",
-    },
-    {
-      title: "Чоловік не підтримує Вас в цьому питанні",
-      description:
-        "Він вважає, що лише контрацепція дає гарантії, і ви не знаєте, як пояснити йому інший підхід.",
-    },
-  ];
+const audienceItems = [
+  {
+    number: "1",
+    title: `Чули про метод, але не розумієте, як це працює`,
+    text: `Ми розкладемо все по поличках, щоб ви отримали цілісну картину без плутанини та здогадок`,
+  },
+  {
+    number: "2",
+    title: `Шукаєте екологічних способів контролювати народження діток`,
+    text: `Дізнайтеся про чудові можливості, які дають методи розпізнавання плідності`,
+  },
+  {
+    number: "3",
+    title: `Сумніваєтесь в ефективності методу`,
+    text: `Знайдете тут наукові дані та надійну статистичну інформацію`,
+  },
+  {
+    number: "4",
+    title: `Вагаєтесь, чи підійде Вам метод`,
+    text: `Зорієнтується, які дії треба виконувати та чи реалістично це у Вашій конкретній ситуації`,
+  },
+  {
+    number: "5",
+    title: `Хочете знайти "свого" вчителя`,
+    text: `Прослухані відео допоможуть зрозуміти, чи підходить Вам стиль подачі інформації та підхід Ірини Табаки`,
+  },
+  {
+    number: "6",
+    title: `Не маєте підтримки чоловіка`,
+    text: `Побачите, скільки користі Ви можете взяти для себе та свого здоров'я`,
+  },
+];
 
-  const scienceParagraphs = [
-    "Це науковий метод, розроблений у 1977 році, при Королівській клініці акушерства та гінекології у місті Бірмінгем (Англія)",
-    "Суть у тому, що здійснюючи щоденні спостереження (за базальною температурою тіла, слизом шийки матки та самої шийкою матки) та заносячи їх у спеціальні карти спостережень, жінка чітко визначає, коли відбулася овуляція. А значить – і плідний та неплідний період.",
-    'Маючи такі знання, пара може відповідно "організовувати" своє інтимне життя. Якщо зачаття дитини відкладається, для статевих стосунків вибирається період, коли завагітніти неможливо.',
-    "Ефективність методу з метою відкладення зачаття за даними ВООЗ становить 99,6%!",
-    "Цей експрес-курс допоможе Вам у ньому розібратися!",
-  ];
+const authorPoints = [
+  `тренер зі статевої та сексуальної грамотності з християнськими цінностями`,
+  `вчитель симпто-термального методу розпізнавання плідності`,
+  `член Української Асоціації Християнської Психології`,
+  `член Асоціації сексологів та сексотерапевтів України`,
+  `катехит`,
+  `щаслива дружина і мама 3 діток`,
+];
 
-  const authorParagraphs = [
-    "Мене звати Ірина Табака.",
-    "Уже 8 років я допомагаю жінкам та подружнім парам опанувати метод розпізнавання плідності — і бачу, як це змінює їхнє життя. Вони більше не бояться непланованої вагітності, бо точно знають, коли вона можлива, а коли — ні.",
-    "На місце страху приходить спокій, радість та свобода. Поліпшується взаєморозуміння та атмосфера в парі.",
-    "Також я викладаю природне планування сім’ї у двох вузах для студентів спеціальностей «Сімейне консультування» та «Катехитика».",
-    "Мій власний досвід застосування цього методу у подружжі триває вже 18 років.",
-    "А ще я — дружина священника та мама трьох підлітків .",
-  ];
+const topics = [
+  `Страх перед непланованою вагітністю. Світло в кінці тунелю`,
+  `Як визначити овуляцію та плідний період?`,
+  `Чи є метод розпізнавання плідності "чарівною таблеткою"?`,
+  `А може, вистачить тестів на овуляцію чи мобільних додатків?`,
+  `А що ж чоловік?`,
+  `Хто ж повірить без відгуків?`,
+  `Що буде на тренінгу і як це все відбувається?`,
+];
 
-  const themes = [
-    "Страх перед непланованою вагітністю. Світло в кінці тунелю",
-    "Як визначити овуляцію та плідний період?",
-    'Чи є метод розпізнавання плідності "чарівною таблеткою"?',
-    "А може, вистачить тестів на овуляцію чи мобільних додатків?",
-    "А що ж чоловік?",
-    "Хто ж повірить без відгуків?",
-    "Що буде на тренінгу і як це все відбувається?",
-  ];
+const bonuses = [
+  `1. Деякі причини послаблення чи відсутності статевого бажання:`,
+  `2. Засоби контрацепції: за і проти`,
+];
 
-  const learningSteps = [
-    "Ви переглядаєте відео у зручний для Вас час самостійно, а ще краще - парою",
-    "Після цього є можливість зустрітися з автором на 20-хвилинній безкоштовній консультації",
-  ];
+const learningSteps = [
+  `Після оплати Ви отримаєте запрошення перейти в Телеграм-канал, де на Вас уже чекає весь матеріал`,
+  `Ви переглядаєте відео у зручний для Вас час самостійно, а ще краще - парою`,
+  `Задаєте усі питання, що виникають`,
+  `Ми зустрічаємось на вебінарі в Zoom, обговорюємо усі питання`,
+  `Після цього є можливість зустрітися з автором на 20-хвилинній безкоштовній консультації`,
+];
 
-  const testimonials = [
-    {
-      name: "Ірина Баран",
-      text: [
-        "“Пані Ірино, дякую за чудовий ознайомчий курс. Я нарешті все дослухала і розумію, що справді хочу продовження. Ви чудова, світла і дуже щира жінка, лекторка, вчитель Маю певні страхи, побоювання чи зможу все правильно опанувати і трохи бракує розуміння і підтримки чоловіка, але я знаю, що Господь може все перемінити, бачачи щирі прагнення і намірення. Розкажіть, будь ласка, як відбувається наступний етап? Яка вартість навчання та як відбувається наша комунікація?”",
-      ],
-    },
-    {
-      name: "Якубів Наталя",
-      text: [
-        '“Хто шукає, той знаходить. От і ми знайшли для себе тренінг Ірини Табаки "Формула любові", який навчає методу розпізнавання плідності і вбачаємо для себе унікальну можливість навчатися цьому і освоїти його, щоб краще розуміти себе саму і своє тіло, процеси, які у ньому відбуваються, а також свого чоловіка, і наші стосунки, розкрити сповна потенціал наших відносин і жити вільно, насолоджуючись подружнім життям. Щиро дякуємо п. Ірині ТАБАЦІ та її команді за віддану працю у цій сфері.',
-        "Це нелегка, але така потрібна і благородна справа. Дякуємо, що відкриваєте нам таємниці справжнього подружнього щастя. Дякуємо, за ваш дорогоцінний час, натхнення, розуміння, зусилля , які ви вкладаєте, щоб вести подружжя до повноти Божого задуму та радості життя .”",
-      ],
-    },
-    {
-      name: "Tetiana Bura",
-      text: [
-        '“Щаслива, що познайомилась з пані Іриною та її курсом, адже знання, які отримала це щось безцінне, щось, що допомагає відчути життя у повні, допомагає дивитись на свою плідність як на друга, а не ворога та жити без страху))”',
-      ],
-    },
-  ];
+const reviews = [
+  {
+    name: `Ірина Баран`,
+    text: `Пані Ірино, дякую за чудовий ознайомчий курс. Я нарешті все дослухала і розумію, що справді хочу продовження. Ви чудова, світла і дуже щира жінка, лекторка, вчитель Маю певні страхи, побоювання чи зможу все правильно опанувати і трохи бракує розуміння і підтримки чоловіка, але я знаю, що Господь може все перемінити, бачачи щирі прагнення і намірення. Розкажіть, будь ласка, як відбувається наступний етап? Яка вартість навчання та як відбувається наша комунікація?`,
+  },
+  {
+    name: `Якубів Наталія`,
+    text: `Хто шукає, той знаходить. От і ми знайшли для себе тренінг Ірини Табаки "Формула любові", який навчає методу розпізнавання плідності і вбачаємо для себе унікальну можливість навчатися цьому і освоїти його, щоб краще розуміти себе саму і своє тіло, процеси, які у ньому відбуваються, а також свого чоловіка, і наші стосунки, розкрити сповна потенціал наших відносин і жити вільно, насолоджуючись подружнім життям. Щиро дякуємо п. Ірині ТАБАЦІ та її команді за віддану працю у цій сфері. Це нелегка, але така потрібна і благородна справа. Дякуємо, що відкриваєте нам таємниці справжнього подружнього щастя. Дякуємо, за ваш дорогоцінний час, натхнення, розуміння, зусилля , які ви вкладаєте, щоб вести подружжя до повноти Божого задуму та радості життя`,
+  },
+  {
+    name: `Tetiana Bura`,
+    text: `Щаслива, що познайомилась з пані Іриною та її курсом, адже знання, які отримала це щось безцінне, щось, що допомагає відчути життя у повні, допомагає дивитись на свою плідність як на друга, а не ворога та жити без страху))`,
+  },
+];
 
-  const faqs = [
-    {
-      question:
-        "Я не маю багато часу. Чи варто проходити цей курс, якщо я дуже зайнята?",
-      answer:
-        "Курс складається з 7 коротких змістовний відеоуроків, які можна переглядати в будь-який зручний для вас час. Ви зможете навчатися у своєму темпі, і це дозволить вам адаптувати навчання під ваш розклад, навіть якщо у вас обмежений час.",
-    },
-    {
-      question:
-        "Я чула, що природне планування сім'ї — це складно. Чи не буде цей курс надто важким для мене?",
-      answer:
-        "На цьому курсі ми говоримо про складні речі дуже простими словами. Ви отримаєте чітке, структуроване та доступне пояснення основних аспектів методу, переваг та труднощів.",
-    },
-    {
-      question: "Чи підходить цей метод для людей з нерегулярним циклом?",
-      answer:
-        "Не лише підходить, а й допомагає краще розібратися з причинами цієї нерегулярності",
-    },
-    {
-      question: "Чи гарантує цей курс успішне застосування методу?",
-      answer:
-        "Ні, курс не дає можливості опанувати метод. Він дає всі підстави прийняти обгрунтоване рішення, чи хочете Ви йти далі і проходити грунтовне навчання методу розпізнавання плідності",
-    },
-  ];
+const faqItems = [
+  {
+    question: `Я не маю багато часу. Чи варто проходити цей курс, якщо я дуже зайнята?`,
+    answer: `Курс складається з 7 коротких змістовний відеоуроків, які можна переглядати в будь-який зручний для вас час. Ви зможете навчатися у своєму темпі, і це дозволить вам адаптувати навчання під ваш розклад, навіть якщо у вас обмежений час.`,
+  },
+  {
+    question: `Чи підходить цей метод для людей з нерегулярним циклом?`,
+    answer: `Не лише підходить, а й допомагає краще розібратися з причинами цієї нерегулярності`,
+  },
+  {
+    question: `Чи гарантує цей курс успішне застосування методу?`,
+    answer: `Ні, курс не дає можливості опанувати метод. Він дає всі підстави прийняти обгрунтоване рішення, чи хочете Ви йти далі і проходити грунтовне навчання методу розпізнавання плідності`,
+  },
+  {
+    question: `Я чула, що природне планування сім'ї — це складно. Чи не буде цей курс надто важким для мене?`,
+    answer: `На цьому курсі ми говоримо про складні речі дуже простими словами. Ви отримаєте чітке, структуроване та доступне пояснення основних аспектів методу, переваг та труднощів.`,
+  },
+  {
+    question: `Я сумніваюся, чи варто платити за курс. Що я отримаю за ці гроші?`,
+    answer: `За 300 грн ви отримаєте доступ до 7 відеоуроків та двох бонусів. Це не тільки навчання, а й конкретні поради, які допоможуть вам зберегти енергію і зменшити стрес, пов'язаний з плануванням сім'ї. Крім того, ви отримаєте відповіді на свої запитання під час зустрічі з експертом, що зробить ваш шлях до прийняття рішення ще більш впевненим.`,
+  },
+];
 
+function SectionTitle({ children }: { children: ReactNode }) {
   return (
-    <main className="overflow-hidden bg-[#f8f5f1] text-[#16195a]">
-      <section className="relative isolate">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(22,25,90,0.14),transparent_34%),linear-gradient(180deg,#fcfaf7_0%,#f8f5f1_52%,#f3eee8_100%)]" />
-        <div className="absolute left-1/2 top-24 -z-10 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-[#d9c2a4]/20 blur-3xl" />
+    <div className="mx-auto max-w-[980px] text-center">
+      <div className="mb-5 flex items-center justify-center gap-4">
+        <span className="h-px w-14 bg-[#16195a]/20" />
+        <span className="h-2 w-2 rounded-full bg-[#16195a]" />
+        <span className="h-px w-14 bg-[#16195a]/20" />
+      </div>
+      <h2 className="text-3xl font-light leading-tight text-[#16195a] md:text-5xl">
+        {children}
+      </h2>
+    </div>
+  );
+}
 
-        <div className="mx-auto max-w-[1400px] px-6 pb-20 pt-10 md:px-10 md:pb-28 md:pt-16">
-          <div className="mx-auto max-w-[920px] text-center">
-            <p className="text-[12px] font-medium uppercase tracking-[0.35em] text-[#16195a]/60 md:text-[13px]">
-              Онлайн-школа Ірини Табаки
-            </p>
+function SectionTag() {
+  return (
+    <div className="mb-10 flex justify-center">
+      <span className="rounded-full border border-[#16195a]/10 bg-white/70 px-4 py-2 text-sm tracking-[0.2em] text-[#16195a]/70 shadow-sm backdrop-blur">
+        All
+      </span>
+    </div>
+  );
+}
 
-            <div className="mt-6 inline-flex items-center rounded-full border border-[#16195a]/10 bg-white/80 px-4 py-2 text-sm text-[#16195a]/70 shadow-[0_10px_30px_rgba(22,25,90,0.06)] backdrop-blur">
-              "Що жінка має знати про свій цикл, щоб не боятися несподіваної
-              вагітності?"
+function MediaPlaceholder({
+  className = "",
+}: {
+  className?: string;
+}) {
+  return (
+    <div
+      className={`overflow-hidden rounded-[32px] border border-[#16195a]/10 bg-[linear-gradient(135deg,rgba(22,25,90,0.05),rgba(255,255,255,0.9),rgba(214,180,120,0.14))] shadow-[0_20px_70px_rgba(12,18,48,0.08)] ${className}`}
+    >
+      <div className="h-full w-full bg-[radial-gradient(circle_at_top,rgba(22,25,90,0.08),transparent_48%),linear-gradient(180deg,rgba(255,255,255,0.55),rgba(22,25,90,0.03))]" />
+    </div>
+  );
+}
+
+function SideMediaSection({
+  reverse = false,
+  children,
+}: {
+  reverse?: boolean;
+  children: ReactNode;
+}) {
+  return (
+    <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+      <div className={reverse ? "lg:order-2" : ""}>
+        <MediaPlaceholder className="aspect-[4/5] min-h-[340px] w-full transition duration-500 hover:-translate-y-1 hover:shadow-[0_26px_80px_rgba(12,18,48,0.14)] md:min-h-[460px]" />
+      </div>
+      <div className={reverse ? "lg:order-1" : ""}>{children}</div>
+    </div>
+  );
+}
+
+export default function FormulaLoveDemoPage() {
+  return (
+    <main className="bg-[#fbf9f7] text-[#161616]">
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(22,25,90,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(203,162,91,0.12),transparent_28%)]" />
+        <div className="relative mx-auto max-w-[1440px] px-6 pb-16 pt-28 md:px-10 md:pb-24 md:pt-36">
+          <div className="mx-auto max-w-[1050px] text-center">
+            <div className="inline-flex rounded-full border border-[#16195a]/10 bg-white/80 px-5 py-2 text-sm tracking-[0.18em] text-[#16195a]/70 shadow-sm backdrop-blur">
+              Уже сьогодні
             </div>
 
-            <h1 className="mx-auto mt-8 max-w-[900px] text-4xl font-normal uppercase leading-[1.05] tracking-[-0.03em] text-[#16195a] md:text-6xl xl:text-[76px]">
-              Зрозумій свій цикл – живи без тривоги
+            <h1 className="mt-8 text-4xl font-light leading-[1.1] text-[#16195a] md:text-6xl">
+              Експрес-курс
+              <br />
+              з природного планування сім&apos;ї
             </h1>
 
-            <p className="mx-auto mt-6 max-w-[820px] text-xl font-light uppercase tracking-[0.18em] text-[#16195a]/80 md:text-2xl">
-              Експрес-курс з методу розпізнавання плідності
-            </p>
-
-            <p className="mx-auto mt-6 max-w-[720px] text-lg leading-8 text-[#16195a]/76 md:text-[22px]">
-              Можливість розібратися, як це працює і прийняти своє рішення
+            <p className="mx-auto mt-8 max-w-[980px] text-lg leading-8 text-[#202020]/85 md:text-2xl md:leading-10">
+              7 уроків та 1 зустріч, які допоможуть Вам зрозуміти, як позбутися
+              страху непланованої вагітності за допомогою методу розпізнавання
+              плідності і розібратися, чи підходить це Вам.
             </p>
           </div>
+        </div>
+      </section>
 
-          <div className="mt-14 grid items-center gap-8 lg:grid-cols-[1.08fr_0.92fr]">
-            {/* 
-              ВЕЛИКЕ ФОТО:
-              висота фото-блоку міняється тут -> min-h-[320px] md:min-h-[560px]
-              якщо хочете зробити блок ще більшим/меншим, міняйте саме ці класи
-            */}
-            <div className="w-full">
-              <div className="relative h-[320px] w-full overflow-hidden rounded-[28px] md:h-[560px]">
-                <Image
-                  src="/images/m.png"
-                  alt="Опис фото"
-                  fill
-                  className="object-cover"
-                />
+      <section className="mx-auto max-w-[1440px] px-6 py-20 md:px-10 md:py-24">
+        <SectionTitle>Цей курс для Вас, якщо:</SectionTitle>
+
+        <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {audienceItems.map((item) => (
+            <article
+              key={item.number}
+              className="rounded-[30px] border border-[#16195a]/8 bg-white/90 p-7 text-center shadow-[0_16px_45px_rgba(12,18,48,0.06)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(12,18,48,0.11)]"
+            >
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-[#16195a]/10 bg-[#f6f4ef] text-lg font-medium text-[#16195a]">
+                {item.number}
               </div>
+              <h3 className="mt-6 text-2xl font-light leading-tight text-[#16195a]">
+                {item.title}
+              </h3>
+              <p className="mx-auto mt-4 max-w-[360px] text-base leading-7 text-[#1f1f1f]/80 md:text-lg">
+                {item.text}
+              </p>
+            </article>
+          ))}
+        </div>
+      </section>
 
-            </div>
+      <section className="bg-white/70">
+        <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-10 md:py-24">
+          <SectionTitle>Автор курсу - Ірина Табака</SectionTitle>
 
-            {/* 
-              ТЕКСТ БІЛЯ ФОТО:
-              ось це і є блок, де текст стоїть збоку від фото.
-              якщо захочете поміняти сторони місцями:
-              - фото блоку дайте className="lg:order-2"
-              - цьому текстовому блоку дайте className="lg:order-1"
-            */}
-            <div className="rounded-[34px] border border-[#16195a]/10 bg-white p-8 shadow-[0_24px_70px_rgba(22,25,90,0.08)] transition duration-500 hover:-translate-y-1 md:p-10">
-              <div className="mx-auto max-w-[520px] text-center lg:text-left">
-                <p className="text-xs uppercase tracking-[0.35em] text-[#16195a]/48">
-                  Основне
-                </p>
-
-                <h2 className="mt-4 text-3xl font-normal leading-tight text-[#16195a] md:text-4xl">
-                  Зрозумій свій цикл – живи без тривоги
-                </h2>
-
-                <p className="mt-5 text-lg leading-8 text-[#16195a]/74">
-                  Експрес-курс з методу розпізнавання плідності
-                </p>
-
-                <div className="mt-8 grid gap-4">
-                  {heroPoints.map((item) => (
-                    <div
-                      key={item}
-                      className="rounded-[24px] border border-[#16195a]/8 bg-[#f8f5f1] px-5 py-4 transition duration-500 hover:-translate-y-1 hover:shadow-[0_20px_35px_rgba(22,25,90,0.08)]"
+          <div className="mt-16">
+            <SideMediaSection>
+              <div className="rounded-[30px] border border-[#16195a]/8 bg-white/85 p-8 shadow-[0_16px_45px_rgba(12,18,48,0.06)] backdrop-blur md:p-10">
+                <ul className="space-y-4 text-left text-lg leading-8 text-[#161616]">
+                  {authorPoints.map((point) => (
+                    <li
+                      key={point}
+                      className="flex items-start gap-4 transition duration-500 hover:translate-x-1"
                     >
-                      <p className="text-base leading-7 text-[#16195a]">
-                        {item}
-                      </p>
-                    </div>
+                      <span className="mt-3 h-2.5 w-2.5 shrink-0 rounded-full bg-[#16195a]" />
+                      <span>{point}</span>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
-            </div>
+            </SideMediaSection>
           </div>
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="mx-auto max-w-[1200px] px-6 py-18 md:px-10 md:py-24">
-          <div className="mx-auto max-w-[900px] text-center">
-            <h2 className="text-3xl font-normal uppercase tracking-[-0.03em] text-[#16195a] md:text-5xl">
-              "Це неможливо!" - скажете Ви :)
-            </h2>
-            <p className="mt-5 text-xl font-medium text-[#16195a]/90">Вірю</p>
-            <p className="mx-auto mt-5 max-w-[820px] text-lg leading-8 text-[#16195a]/72 md:text-[22px]">
-              Вивчити метод справді в такий спосіб неможливо, але остаточно в
-              ньому розібратися і зрозуміти, чи Вам це підходить – цілком
-              реально!
-            </p>
-          </div>
-        </div>
-      </section>
+      <section className="mx-auto max-w-[1440px] px-6 py-20 md:px-10 md:py-24">
+        <SectionTitle>Теми курсу:</SectionTitle>
 
-      <section className="relative">
-        <div className="mx-auto max-w-[1400px] px-6 py-20 md:px-10 md:py-28">
-          <div className="mx-auto max-w-[980px] text-center">
-            <p className="text-xs uppercase tracking-[0.35em] text-[#16195a]/45">
-              Для кого
-            </p>
-            <h2 className="mt-5 text-3xl font-normal uppercase tracking-[-0.03em] text-[#16195a] md:text-5xl">
-              Отож, цей курс - для Вас, якщо Ви:
-            </h2>
-          </div>
-
-          <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {reasons.map((item, index) => (
-              <article
-                key={item.title}
-                className={`rounded-[30px] border border-[#16195a]/8 bg-[#f8f5f1] p-7 text-center shadow-[0_16px_45px_rgba(22,25,90,0.05)] transition duration-500 hover:-translate-y-1 hover:bg-white hover:shadow-[0_22px_55px_rgba(22,25,90,0.09)] ${
-                    index === 6 ? "xl:col-start-2" : ""
-                }`}
-              >
-                <div className="mx-auto h-10 w-10 rounded-full border border-[#16195a]/12 bg-[#f8f5f1]" />
-                <h3 className="mt-6 text-xl font-medium leading-8 text-[#16195a]">
-                  {item.title}
-                </h3>
-                <p className="mt-4 text-base leading-7 text-[#16195a]/70">
-                  {item.description}
-                </p>
-              </article>
-            ))}
-          </div>
+        <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {topics.map((topic, index) => (
+            <article
+              key={topic}
+              className="rounded-[30px] border border-[#16195a]/8 bg-white p-7 text-center shadow-[0_16px_45px_rgba(12,18,48,0.06)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(12,18,48,0.11)]"
+            >
+              <div className="text-sm tracking-[0.22em] text-[#16195a]/55">
+                {String(index + 1).padStart(2, "0")}
+              </div>
+              <h3 className="mt-4 text-2xl font-light leading-tight text-[#16195a]">
+                {topic}
+              </h3>
+            </article>
+          ))}
         </div>
       </section>
 
       <section className="bg-[#16195a] text-white">
-        <div className="mx-auto max-w-[1200px] px-6 py-20 text-center md:px-10 md:py-24">
-          <p className="text-xs uppercase tracking-[0.35em] text-white/55">
-            Рішення
-          </p>
-          <h2 className="mx-auto mt-5 max-w-[900px] text-3xl font-normal uppercase tracking-[-0.03em] text-white md:text-5xl">
-            Вирішити ці проблеми за допомогою методу розпізнавання плідності!
-          </h2>
-
-          <div className="mx-auto mt-10 max-w-[980px] space-y-6">
-            {scienceParagraphs.map((paragraph) => (
-              <p
-                key={paragraph}
-                className="text-lg leading-8 text-white/82 md:text-[21px]"
-              >
-                {paragraph}
-              </p>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="relative bg-[#f3eee8]">
-        <div className="mx-auto max-w-[1400px] px-6 py-20 md:px-10 md:py-28">
-          <div className="grid items-center gap-8 lg:grid-cols-[0.94fr_1.06fr]">
-            {/* 
-              ЩОБ ТЕКСТ БУВ БІЛЯ ФОТО:
-              цей контейнер має grid + 2 колонки.
-              фото ліворуч, текст праворуч.
-              якщо треба навпаки, поміняйте order як написано вище.
-            */}
-            <div className="group relative overflow-hidden rounded-[34px] border border-white/70 bg-white/70 p-3 shadow-[0_28px_80px_rgba(22,25,90,0.10)] transition duration-700 hover:-translate-y-1">
-              <div className="flex min-h-[320px] items-center justify-center rounded-[28px] border border-dashed border-[#16195a]/16 bg-[linear-gradient(145deg,rgba(22,25,90,0.08),rgba(255,255,255,0.92))] px-6 text-center md:min-h-[620px]">
-                  <div className="mx-auto w-full max-w-[600px]">
-                    <div className="relative h-[320px] w-[520px] overflow-hidden rounded-[28px] md:h-[620px]">
-                      <Image
-                        src="/images/au.png"
-                        alt="Опис фото"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                  </div>
-              </div>
+        <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-10 md:py-24">
+          <div className="mx-auto max-w-[980px] text-center">
+            <div className="mb-5 flex items-center justify-center gap-4">
+              <span className="h-px w-14 bg-white/20" />
+              <span className="h-2 w-2 rounded-full bg-white" />
+              <span className="h-px w-14 bg-white/20" />
             </div>
-
-            <div className="rounded-[34px] border border-[#16195a]/8 bg-white p-8 shadow-[0_24px_70px_rgba(22,25,90,0.08)] md:p-10">
-              <div className="mx-auto max-w-[620px] text-center lg:text-left">
-                <p className="text-xs uppercase tracking-[0.35em] text-[#16195a]/45">
-                  Про автора
-                </p>
-                <h2 className="mt-4 text-3xl font-normal uppercase tracking-[-0.03em] text-[#16195a] md:text-5xl">
-                  Про автора
-                </h2>
-
-                <div className="mt-8 space-y-5">
-                  {authorParagraphs.map((paragraph) => (
-                    <p
-                      key={paragraph}
-                      className="text-lg leading-8 text-[#16195a]/74"
-                    >
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white">
-        <div className="mx-auto max-w-[1350px] px-6 py-20 md:px-10 md:py-28">
-          <div className="mx-auto max-w-[900px] text-center">
-            <p className="text-xs uppercase tracking-[0.35em] text-[#16195a]/45">
-              Наповнення
-            </p>
-            <h2 className="mt-5 text-3xl font-normal uppercase tracking-[-0.03em] text-[#16195a] md:text-5xl">
-              Теми курсу:
+            <h2 className="text-3xl font-light leading-tight md:text-5xl">
+              Бонуси:
             </h2>
           </div>
 
-            <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {themes.map((item, index) => (
-                <div
-                key={item}
-                className={`rounded-[28px] border border-[#16195a]/8 bg-[#f8f5f1] p-7 text-center shadow-[0_16px_45px_rgba(22,25,90,0.05)] transition duration-500 hover:-translate-y-1 hover:bg-white hover:shadow-[0_22px_55px_rgba(22,25,90,0.09)] ${
-                    index === 6 ? "xl:col-start-2" : ""
-                }`}
-                >
-                <p className="text-lg leading-8 text-[#16195a] md:text-xl">
-                    {item}
-                </p>
-                </div>
-            ))}
-            </div>
-        </div>
-      </section>
-        <section className="relative overflow-hidden bg-[#f8f5f1] py-20 md:py-24">
-        <div className="mx-auto max-w-[1150px] px-6 md:px-10">
-            <div className="flex items-center justify-center gap-5 md:gap-8">
-            <div className="h-px flex-1 max-w-[320px] bg-[#16195a]/14" />
+          <SectionTag />
 
-            <div className="flex h-20 w-20 items-center justify-center rounded-full border border-[#16195a]/10 bg-white shadow-[0_18px_40px_rgba(22,25,90,0.08)]">
-                <svg
-                width="42"
-                height="42"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="text-[#2e3272]"
-                >
-                <path
-                    d="M12 7C12 5.34315 13.3431 4 15 4C16.6569 4 18 5.34315 18 7C18 8.65685 16.6569 10 15 10H12V7Z"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                />
-                <path
-                    d="M12 7C12 5.34315 10.6569 4 9 4C7.34315 4 6 5.34315 6 7C6 8.65685 7.34315 10 9 10H12V7Z"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                />
-                <path d="M5 10H19V13H5V10Z" fill="currentColor" />
-                <path d="M6 13H11V20H6V13Z" fill="currentColor" />
-                <path d="M13 13H18V20H13V13Z" fill="currentColor" />
-                <path d="M12 10V20" stroke="white" strokeWidth="1.6" />
-                </svg>
-            </div>
-
-            <div className="h-px flex-1 max-w-[320px] bg-[#16195a]/14" />
-            </div>
-
-            <div className="mx-auto mt-12 max-w-[920px] space-y-6">
-            <div className="rounded-[30px] border border-[#16195a]/8 bg-white px-8 py-8 text-center shadow-[0_20px_60px_rgba(22,25,90,0.06)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_28px_80px_rgba(22,25,90,0.10)] md:px-12 md:py-10">
-                <p className="text-2xl leading-[1.5] text-[#2e3272] md:text-[34px]">
-                Бонус 1. Основні причини послаблення чи відсутності статевого бажання
-                </p>
-            </div>
-
-            <div className="rounded-[30px] border border-[#16195a]/8 bg-white px-8 py-8 text-center shadow-[0_20px_60px_rgba(22,25,90,0.06)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_28px_80px_rgba(22,25,90,0.10)] md:px-12 md:py-10">
-                <p className="text-2xl leading-[1.5] text-[#2e3272] md:text-[34px]">
-                Бонус 2. Засоби контрацепції: За і Проти (в контексті християнського
-                світогляду)
-                </p>
-            </div>
-            </div>
-        </div>
-        </section>
-      <section className="relative bg-[#16195a] text-white">
-        <div className="mx-auto max-w-[1300px] px-6 py-20 md:px-10 md:py-24">
-          <div className="mx-auto max-w-[900px] text-center">
-            <p className="text-xs uppercase tracking-[0.35em] text-white/55">
-              Формат
-            </p>
-            <h2 className="mt-5 text-3xl font-normal uppercase tracking-[-0.03em] text-white md:text-5xl">
-              Як відбувається навчання?
-            </h2>
-          </div>
-
-          <div className="mt-14 grid gap-5 md:grid-cols-2">
-            {learningSteps.map((item, index) => (
-              <div
-                key={item}
-                className="rounded-[30px] border border-white/10 bg-white/8 p-8 text-center backdrop-blur transition duration-500 hover:-translate-y-1 hover:bg-white/10 md:p-10"
-              >
-                <p className="text-[11px] uppercase tracking-[0.35em] text-white/45">
-                  {`0${index + 1}`}
-                </p>
-                <p className="mt-5 text-xl leading-8 text-white/90">{item}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#f8f5f1]">
-        <div className="mx-auto max-w-[1400px] px-6 py-20 md:px-10 md:py-28">
-          <div className="mx-auto max-w-[900px] text-center">
-            <p className="text-xs uppercase tracking-[0.35em] text-[#16195a]/45">
-              Відгуки
-            </p>
-            <h2 className="mt-5 text-3xl font-normal uppercase tracking-[-0.03em] text-[#16195a] md:text-5xl">
-              Відгуки
-            </h2>
-          </div>
-
-          <div className="mt-14 grid gap-6 xl:grid-cols-3">
-            {testimonials.map((item, index) => (
+          <div className="grid gap-6 md:grid-cols-2">
+            {bonuses.map((bonus) => (
               <article
-                key={item.name}
-                className="rounded-[30px] border border-[#16195a]/8 bg-white p-6 text-center shadow-[0_18px_55px_rgba(22,25,90,0.06)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_26px_70px_rgba(22,25,90,0.10)] md:p-8"
+                key={bonus}
+                className="rounded-[30px] border border-white/10 bg-white/8 p-5 shadow-[0_18px_50px_rgba(0,0,0,0.18)] backdrop-blur transition duration-500 hover:-translate-y-1"
               >
-                <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full border border-dashed border-[#16195a]/15 bg-[linear-gradient(135deg,rgba(22,25,90,0.05),rgba(217,194,164,0.18))] text-center">
-                  <span className="text-[10px] uppercase tracking-[0.35em] text-[#16195a]/45">
-                    Фото
-                  </span>
-                </div>
-
-                <h3 className="mt-6 text-2xl font-medium text-[#16195a]">
-                  {item.name}
+                <MediaPlaceholder className="aspect-[16/10] min-h-[220px] w-full border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.18),rgba(255,255,255,0.05))]" />
+                <h3 className="mt-6 text-center text-2xl font-light leading-tight">
+                  {bonus}
                 </h3>
-
-                <div className="mt-5 space-y-4">
-                  {item.text.map((paragraph) => (
-                    <p
-                      key={`${item.name}-${paragraph.slice(0, 24)}-${index}`}
-                      className="text-base leading-8 text-[#16195a]/72"
-                    >
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-10 md:py-28">
-          <div className="mx-auto max-w-[900px] text-center">
-            <p className="text-xs uppercase tracking-[0.35em] text-[#16195a]/45">
-              FAQ
-            </p>
-            <h2 className="mt-5 text-3xl font-normal uppercase tracking-[-0.03em] text-[#16195a] md:text-5xl">
-              Найпоширеніші запитання
-            </h2>
-          </div>
+      <section className="mx-auto max-w-[1440px] px-6 py-20 md:px-10 md:py-24">
+        <SectionTitle>Як відбувається навчання?</SectionTitle>
 
-          <div className="mt-14 space-y-5">
-            {faqs.map((item) => (
-              <div
-                key={item.question}
-                className="rounded-[28px] border border-[#16195a]/8 bg-[#f8f5f1] p-6 text-center shadow-[0_12px_35px_rgba(22,25,90,0.05)] transition duration-500 hover:-translate-y-1 hover:bg-white hover:shadow-[0_20px_48px_rgba(22,25,90,0.08)] md:p-8"
-              >
-                <h3 className="text-xl font-medium leading-8 text-[#16195a] md:text-2xl">
-                  {item.question}
-                </h3>
-                <p className="mx-auto mt-4 max-w-[920px] text-base leading-8 text-[#16195a]/72 md:text-lg">
-                  {item.answer}
-                </p>
+        <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+          {learningSteps.map((step, index) => (
+            <article
+              key={step}
+              className="rounded-[28px] border border-[#16195a]/8 bg-white p-6 text-center shadow-[0_16px_45px_rgba(12,18,48,0.06)] transition duration-500 hover:-translate-y-1"
+            >
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-[#16195a]/10 bg-[#f6f4ef] text-lg font-medium text-[#16195a]">
+                {index + 1}
               </div>
+              <h3 className="mt-5 text-xl font-light leading-8 text-[#16195a]">
+                {step}
+              </h3>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="bg-white/70">
+        <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-10 md:py-24">
+          <SectionTitle>Відгуки</SectionTitle>
+          <SectionTag />
+
+          <div className="grid gap-6 lg:grid-cols-3">
+            {reviews.map((review) => (
+              <article
+                key={review.name}
+                className="rounded-[30px] border border-[#16195a]/8 bg-white p-7 text-center shadow-[0_16px_45px_rgba(12,18,48,0.06)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(12,18,48,0.11)]"
+              >
+                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-[#16195a]/10 bg-[#f6f4ef] text-lg font-medium text-[#16195a]">
+                  {review.name.charAt(0)}
+                </div>
+                <h3 className="mt-5 text-2xl font-light text-[#16195a]">
+                  {review.name}
+                </h3>
+                <p className="mt-5 text-base leading-8 text-[#1f1f1f]/85">
+                  {review.text}
+                </p>
+              </article>
             ))}
           </div>
+
+          <div className="mx-auto mt-12 max-w-[1080px] rounded-[34px] border border-[#16195a]/8 bg-[#16195a] px-8 py-10 text-center text-white shadow-[0_20px_70px_rgba(12,18,48,0.14)] md:px-12">
+            <p className="text-2xl font-light leading-tight md:text-4xl">
+              Цей курс дасть Вам чітку картинку і складе все в один пазл, який
+              допоможе зрозуміти – потрібно це Вам чи ні. Бо всі ті
+              думки/сумніви/вагання, що живуть в голові, просто забирають і без
+              того обмежену енергію.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-[1200px] px-6 py-20 md:px-10 md:py-24">
+        <div className="rounded-[36px] border border-[#16195a]/8 bg-white p-8 text-center shadow-[0_18px_55px_rgba(12,18,48,0.08)] md:p-12">
+          <h2 className="text-3xl font-light leading-tight text-[#16195a] md:text-5xl">
+            Допоможіть собі! І вирішіть для себе це питання!
+          </h2>
+
+          <div className="mt-10 text-5xl font-light text-[#16195a] md:text-6xl">
+            <s>850</s>   300₴
+          </div>
+
+          <p className="mt-4 text-xl font-light text-[#16195a] md:text-2xl">
+            Вартість участі
+          </p>
+
+            <div className="mt-10 flex justify-center">
+              <ExpressButton />
+            </div>
+
+          <div className="mx-auto mt-10 max-w-[900px] rounded-[28px] border border-[#16195a]/8 bg-[#f7f5f1] p-6 md:p-8">
+            <p className="text-sm tracking-[0.22em] text-[#16195a]/60">
+              ГАРАНТІЇ
+            </p>
+            <p className="mt-4 text-base leading-8 text-[#1f1f1f]/85 md:text-lg">
+              Якщо Ви переглянете всі уроки та візьмете участь в зустрічі, і при
+              цьому не зрозумієте, в чому суть методу і чи підійде він Вам - ми
+              повернемо Вашу оплату.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white/70">
+        <div className="mx-auto max-w-[1440px] px-6 py-20 md:px-10 md:py-24">
+          <SectionTitle>Найпоширеніші запитання</SectionTitle>
+          <SectionTag />
+
+          <div className="mx-auto grid max-w-[1080px] gap-4">
+            {faqItems.map((item) => (
+              <details
+                key={item.question}
+                className="group rounded-[26px] border border-[#16195a]/8 bg-white p-6 shadow-[0_12px_35px_rgba(12,18,48,0.05)] transition duration-300 open:shadow-[0_18px_50px_rgba(12,18,48,0.1)]"
+              >
+                <summary className="cursor-pointer list-none text-center text-xl font-light leading-8 text-[#16195a] marker:content-none">
+                  {item.question}
+                </summary>
+                <p className="mx-auto mt-5 max-w-[900px] text-center text-base leading-8 text-[#1f1f1f]/85 md:text-lg">
+                  {item.answer}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="mx-auto max-w-[1100px] px-6 py-20 text-center md:px-10 md:py-24">
+        <SectionTitle>Є питання?</SectionTitle>
+
+        <p className="mx-auto mt-8 max-w-[700px] text-xl leading-relaxed text-[#111] md:text-2xl">
+          Залишились питання? Пишіть!
+        </p>
+
+        <div className="mt-10 flex flex-col items-center gap-4">
+          <a
+            href="tel:+3800974083750"
+            className="text-lg leading-8 text-[#16195a] transition-opacity duration-300 hover:opacity-70 md:text-xl"
+          >
+            +380-0974083750
+          </a>
+
+          <a
+            href="mailto:iryna.tabaka@gmail.com"
+            className="text-lg leading-8 text-[#16195a] transition-opacity duration-300 hover:opacity-70 md:text-xl"
+          >
+            iryna.tabaka@gmail.com
+          </a>
+        </div>
+
+        <div className="mt-14 border-t border-[#16195a]/10 pt-8">
+          <p className="text-sm uppercase tracking-[0.3em] text-[#16195a]/60">
+            Онлайн-школа
+          </p>
+          <p className="mt-4 text-sm text-[#16195a]/70">
+            Авторське право © 2026 Всі права захищено
+          </p>
         </div>
       </section>
     </main>

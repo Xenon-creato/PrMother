@@ -42,7 +42,10 @@ export default function RootLayout({
             (window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
             fbq('init', '1161478935965119');
-            fbq('track', 'PageView');
+            fbq('track', 'PageView');  
+            fbq('track', 'Lead');  
+            fbq('track', 'Purchuse');  
+
           `}
         </Script>
 
