@@ -29,6 +29,10 @@ const courses = [
     title: "КУРС ДЛЯ ПАР, ЩО ЗУСТРІЧАЮТЬСЯ",
     href: "/courses/couples-course",
   },
+  {
+    title: "ЕКСПРЕС-КУРС З МЕТОДУ РОЗПІЗНАВАННЯ ПЛІДНОСТІ",
+    href: "/courses/express-course",
+  },  
 ];
 
 export default function CoursesPage() {
