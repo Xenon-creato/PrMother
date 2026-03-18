@@ -1,3 +1,4 @@
+import Image from "next/image";
 export default function ExpressCoursePage() {
   const heroPoints = [
     "Ефективність методу за даними ВООЗ - 99,6%",
@@ -161,17 +162,16 @@ export default function ExpressCoursePage() {
               висота фото-блоку міняється тут -> min-h-[320px] md:min-h-[560px]
               якщо хочете зробити блок ще більшим/меншим, міняйте саме ці класи
             */}
-            <div className="group relative overflow-hidden rounded-[34px] border border-white/70 bg-white/70 p-3 shadow-[0_30px_90px_rgba(22,25,90,0.10)] backdrop-blur transition duration-700 hover:-translate-y-1">
-              <div className="relative flex min-h-[320px] items-center justify-center rounded-[28px] border border-dashed border-[#16195a]/18 bg-[linear-gradient(135deg,rgba(22,25,90,0.06),rgba(217,194,164,0.18))] px-6 text-center md:min-h-[560px]">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.35em] text-[#16195a]/45">
-                    Фото
-                  </p>
-                  <p className="mt-3 text-lg text-[#16195a]/70 md:text-2xl">
-                    Місце для головного фото курсу
-                  </p>
-                </div>
+            <div className="w-full">
+              <div className="relative h-[320px] w-full overflow-hidden rounded-[28px] md:h-[560px]">
+                <Image
+                  src="/images/m.png"
+                  alt="Опис фото"
+                  fill
+                  className="object-cover"
+                />
               </div>
+
             </div>
 
             {/* 
@@ -294,14 +294,16 @@ export default function ExpressCoursePage() {
             */}
             <div className="group relative overflow-hidden rounded-[34px] border border-white/70 bg-white/70 p-3 shadow-[0_28px_80px_rgba(22,25,90,0.10)] transition duration-700 hover:-translate-y-1">
               <div className="flex min-h-[320px] items-center justify-center rounded-[28px] border border-dashed border-[#16195a]/16 bg-[linear-gradient(145deg,rgba(22,25,90,0.08),rgba(255,255,255,0.92))] px-6 text-center md:min-h-[620px]">
-                <div>
-                  <p className="text-xs uppercase tracking-[0.35em] text-[#16195a]/45">
-                    Фото
-                  </p>
-                  <p className="mt-3 text-lg text-[#16195a]/70 md:text-2xl">
-                    Місце для фото автора
-                  </p>
-                </div>
+                  <div className="mx-auto w-full max-w-[600px]">
+                    <div className="relative h-[320px] w-[520px] overflow-hidden rounded-[28px] md:h-[620px]">
+                      <Image
+                        src="/images/au.png"
+                        alt="Опис фото"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                  </div>
               </div>
             </div>
 
