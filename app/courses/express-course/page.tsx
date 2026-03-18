@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import ExpressButton from "@/components/Express-button";
+import Image from "next/image";
 
 const audienceItems = [
   {
@@ -135,14 +136,40 @@ function MediaPlaceholder({
   className?: string;
 }) {
   return (
-    <div
-      className={`overflow-hidden rounded-[32px] border border-[#16195a]/10 bg-[linear-gradient(135deg,rgba(22,25,90,0.05),rgba(255,255,255,0.9),rgba(214,180,120,0.14))] shadow-[0_20px_70px_rgba(12,18,48,0.08)] ${className}`}
-    >
+              <div className="relative min-h-[500px] overflow-hidden rounded-[30px]">
+                <Image
+                  src="/images/yaa.jpg"
+                  alt="Ірина Табака"
+                  fill
+                  className="object-cover"
+                />
       <div className="h-full w-full bg-[radial-gradient(circle_at_top,rgba(22,25,90,0.08),transparent_48%),linear-gradient(180deg,rgba(255,255,255,0.55),rgba(22,25,90,0.03))]" />
     </div>
   );
 }
-
+function MediaPlaceholder1({
+  className = "",
+}: {
+  className?: string;
+}) {
+  return (
+    <div className="relative min-h-[500px] overflow-hidden rounded-[30px]">
+                <Image
+                  src="/images/bfbd.png"
+                  alt="Ірина Табака"
+                  fill
+                  className="object-cover"
+                />
+                <Image
+                  src="/images/pils.png"
+                  alt="Ірина Табака"
+                  fill
+                  className="object-cover"
+                />
+    </div>
+    
+  );
+}
 function SideMediaSection({
   reverse = false,
   children,
@@ -216,6 +243,7 @@ export default function FormulaLoveDemoPage() {
           <div className="mt-16">
             <SideMediaSection>
               <div className="rounded-[30px] border border-[#16195a]/8 bg-white/85 p-8 shadow-[0_16px_45px_rgba(12,18,48,0.06)] backdrop-blur md:p-10">
+
                 <ul className="space-y-4 text-left text-lg leading-8 text-[#161616]">
                   {authorPoints.map((point) => (
                     <li
@@ -274,7 +302,7 @@ export default function FormulaLoveDemoPage() {
                 key={bonus}
                 className="rounded-[30px] border border-white/10 bg-white/8 p-5 shadow-[0_18px_50px_rgba(0,0,0,0.18)] backdrop-blur transition duration-500 hover:-translate-y-1"
               >
-                <MediaPlaceholder className="aspect-[16/10] min-h-[220px] w-full border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.08),rgba(255,255,255,0.18),rgba(255,255,255,0.05))]" />
+                <MediaPlaceholder1/>
                 <h3 className="mt-6 text-center text-2xl font-light leading-tight">
                   {bonus}
                 </h3>
