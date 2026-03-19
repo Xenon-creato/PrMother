@@ -201,7 +201,7 @@ export default function FormulaLoveDemoPage() {
             <h1 className="mt-8 text-4xl font-light leading-[1.1] text-[#16195a] md:text-6xl">
               Експрес-курс
               <br />
-              з природного планування сім&apos;ї
+              методу розпізнавання плідності
             </h1>
 
             <p className="mx-auto mt-8 max-w-[980px] text-lg leading-8 text-[#202020]/85 md:text-2xl md:leading-10">
