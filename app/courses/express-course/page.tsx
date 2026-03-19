@@ -54,10 +54,15 @@ const topics = [
 ];
 
 const bonuses = [
-  `1. Деякі причини послаблення чи відсутності статевого бажання:`,
-  `2. Засоби контрацепції: за і проти`,
+  {
+    title: "1. Деякі причини послаблення чи відсутності статевого бажання:",
+    image: "/images/bfbd.png",
+  },
+  {
+    title: "2. Засоби контрацепції: за і проти",
+    image: "/images/pils.png",
+  },
 ];
-
 const learningSteps = [
   `Після оплати Ви отримаєте запрошення перейти в Телеграм-канал, де на Вас уже чекає весь матеріал`,
   `Ви переглядаєте відео у зручний для Вас час самостійно, а ще краще - парою`,
@@ -65,21 +70,24 @@ const learningSteps = [
   `Після цього є можливість зустрітися з автором на 20-хвилинній безкоштовній консультації`,
 ];
 
+
 const reviews = [
   {
-    name: `Ірина Б.`,
+    name: "Ірина Б.",
     text: `Пані Ірино, дякую за чудовий ознайомчий курс. Я нарешті все дослухала і розумію, що справді хочу продовження. Ви чудова, світла і дуже щира жінка, лекторка, вчитель Маю певні страхи, побоювання чи зможу все правильно опанувати і трохи бракує розуміння і підтримки чоловіка, але я знаю, що Господь може все перемінити, бачачи щирі прагнення і намірення. Розкажіть, будь ласка, як відбувається наступний етап? Яка вартість навчання та як відбувається наша комунікація?`,
+    image: "/images/reviews/iryna.jpg",
   },
   {
-    name: `Якубів Наталія`,
+    name: "Якубів Наталія",
     text: `Хто шукає, той знаходить. От і ми знайшли для себе тренінг Ірини Табаки "Формула любові", який навчає методу розпізнавання плідності і вбачаємо для себе унікальну можливість навчатися цьому і освоїти його, щоб краще розуміти себе саму і своє тіло, процеси, які у ньому відбуваються, а також свого чоловіка, і наші стосунки, розкрити сповна потенціал наших відносин і жити вільно, насолоджуючись подружнім життям. Щиро дякуємо п. Ірині ТАБАЦІ та її команді за віддану працю у цій сфері. Це нелегка, але така потрібна і благородна справа. Дякуємо, що відкриваєте нам таємниці справжнього подружнього щастя. Дякуємо, за ваш дорогоцінний час, натхнення, розуміння, зусилля , які ви вкладаєте, щоб вести подружжя до повноти Божого задуму та радості життя`,
+    image: "/images/Якуб.jpg",
   },
   {
-    name: `Tetiana Bura`,
+    name: "Tetiana Bura",
     text: `Щаслива, що познайомилась з пані Іриною та її курсом, адже знання, які отримала це щось безцінне, щось, що допомагає відчути життя у повні, допомагає дивитись на свою плідність як на друга, а не ворога та жити без страху))`,
+    image: "/images/Бура.jpg",
   },
 ];
-
 const faqItems = [
   {
     question: `Я не маю багато часу. Чи варто проходити цей курс, якщо я дуже зайнята?`,
@@ -145,26 +153,21 @@ function MediaPlaceholder({
   );
 }
 function MediaPlaceholder1({
-  className = "",
+  src,
+  alt,
 }: {
-  className?: string;
+  src: string;
+  alt: string;
 }) {
   return (
     <div className="relative min-h-[500px] overflow-hidden rounded-[30px]">
-                <Image
-                  src="/images/bfbd.png"
-                  alt="Ірина Табака"
-                  fill
-                  className="object-cover"
-                />
-                <Image
-                  src="/images/pils.png"
-                  alt="Ірина Табака"
-                  fill
-                  className="object-cover"
-                />
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className="object-cover"
+      />
     </div>
-    
   );
 }
 function SideMediaSection({
@@ -300,12 +303,13 @@ export default function FormulaLoveDemoPage() {
           <div className="grid gap-6 md:grid-cols-2">
             {bonuses.map((bonus) => (
               <article
-                key={bonus}
+                key={bonus.title}
                 className="rounded-[30px] border border-white/10 bg-white/8 p-5 shadow-[0_18px_50px_rgba(0,0,0,0.18)] backdrop-blur transition duration-500 hover:-translate-y-1"
               >
-                <MediaPlaceholder1/>
+                <MediaPlaceholder1 src={bonus.image} alt={bonus.title} />
+
                 <h3 className="mt-6 text-center text-2xl font-light leading-tight">
-                  {bonus}
+                  {bonus.title}
                 </h3>
               </article>
             ))}
@@ -338,24 +342,31 @@ export default function FormulaLoveDemoPage() {
           <SectionTitle>Відгуки</SectionTitle>
           <SectionTag />
 
-          <div className="grid gap-6 lg:grid-cols-3">
-            {reviews.map((review) => (
-              <article
-                key={review.name}
-                className="rounded-[30px] border border-[#16195a]/8 bg-white p-7 text-center shadow-[0_16px_45px_rgba(12,18,48,0.06)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(12,18,48,0.11)]"
-              >
-                <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full border border-[#16195a]/10 bg-[#f6f4ef] text-lg font-medium text-[#16195a]">
-                  {review.name.charAt(0)}
-                </div>
-                <h3 className="mt-5 text-2xl font-light text-[#16195a]">
-                  {review.name}
-                </h3>
-                <p className="mt-5 text-base leading-8 text-[#1f1f1f]/85">
-                  {review.text}
-                </p>
-              </article>
-            ))}
-          </div>
+            <div className="grid gap-6 lg:grid-cols-3">
+              {reviews.map((review) => (
+                <article
+                  key={review.name}
+                  className="rounded-[30px] border border-[#16195a]/8 bg-white p-7 text-center shadow-[0_16px_45px_rgba(12,18,48,0.06)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(12,18,48,0.11)]"
+                >
+                  <div className="relative mx-auto h-14 w-14 overflow-hidden rounded-full border border-[#16195a]/10 bg-[#f6f4ef]">
+                    <Image
+                      src={review.image}
+                      alt={review.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+
+                  <h3 className="mt-5 text-2xl font-light text-[#16195a]">
+                    {review.name}
+                  </h3>
+
+                  <p className="mt-5 text-base leading-8 text-[#1f1f1f]/85">
+                    {review.text}
+                  </p>
+                </article>
+              ))}
+            </div>
 
           <div className="mx-auto mt-12 max-w-[1080px] rounded-[34px] border border-[#16195a]/8 bg-[#16195a] px-8 py-10 text-center text-white shadow-[0_20px_70px_rgba(12,18,48,0.14)] md:px-12">
             <p className="text-xl font-light leading-tight md:text-4xl">
