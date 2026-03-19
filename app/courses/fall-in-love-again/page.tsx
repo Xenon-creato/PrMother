@@ -52,8 +52,6 @@ const trainingIncludes = [
   "Завдання для обговорення в парі",
   "Дієві практики",
   "Зворотній зв'язок від Ірини Табаки",
-  "Довірлива атмосфера, спілкуваня з однодумцями, можливість поділитися та задати свої питання",
-  "Групові зустрічі напочатку і вкінці тренінгу",
 ];
 
 const results = [
@@ -69,6 +67,11 @@ const authorPoints = [
   "катехит",
   "щаслива дружина і мама 3 підлітків",
 ];
+
+const paymentLinks = {
+  self: "https://secure.wayforpay.com/button/b0b07999feeb4",
+  feedback: "https://secure.wayforpay.com/button/b72250a73d158",
+};
 
 function SectionTitle({
   children,
@@ -97,32 +100,35 @@ export default function FallInLoveAgainPage() {
         <div className="absolute right-[-100px] top-10 h-80 w-80 rounded-full bg-[#16195a]/10 blur-3xl" />
 
         <div className="relative mx-auto grid max-w-[1400px] items-center gap-12 px-6 py-16 md:px-10 md:py-24 xl:grid-cols-[1.1fr_0.9fr]">
-          <div className="mx-auto max-w-[780px] text-center xl:mx-0 xl:text-left">
-            <p className="mb-4 text-sm text-center uppercase tracking-[0.35em] text-[#16195a]/60">
-              Онлайн-школа
-            </p>
-
-            <h1 className="text-4xl font-normal text-center uppercase leading-tight tracking-[0.08em] text-[#16195a] md:text-6xl">
+          <div className="mx-auto max-w-[780px] text-center">
+            <h1 className="text-4xl font-normal uppercase leading-tight tracking-[0.08em] text-[#16195a] md:text-6xl">
               ТРЕНІНГ &quot;ЗАКОХАТИСЯ ЗНОВУ!&quot;
             </h1>
 
-            <div className="mx-auto mt-8 max-w-[720px] space-y-3 xl:mx-0">
-              <p className="text-xl leading-relaxed text-center text-[#111] md:text-2xl">
+            <div className="mx-auto mt-8 max-w-[720px] space-y-3">
+              <p className="text-xl leading-relaxed text-[#111] md:text-2xl">
                 як відновити інтимну подружню близькість тим, у кого вона згасає
               </p>
-              <p className="text-xl leading-relaxed text-center text-[#111] md:text-2xl">
+              <p className="text-xl leading-relaxed text-[#111] md:text-2xl">
                 і як її побудувати тим, хто її ще не здобув
               </p>
             </div>
 
-            <p className="mt-8 text-sm uppercase text-center tracking-[0.3em] text-[#16195a]/70 md:text-base">
+            <p className="mt-8 text-sm uppercase tracking-[0.3em] text-[#16195a]/70 md:text-base">
               ( В КОНТЕКСТІ ХРИСТИЯНСЬКОГО СВІТОГЛЯДУ)
             </p>
           </div>
 
           <div className="mx-auto w-full max-w-[540px]">
-            <div className="group relative overflow-hidden rounded-[34px] border border-white/70 bg-white/70 p-4 shadow-[0_24px_80px_rgba(22,25,90,0.12)] backdrop-blur">
-              <div className="aspect-[4/5] rounded-[26px] border border-dashed border-[#16195a]/20 bg-[linear-gradient(135deg,rgba(22,25,90,0.05),rgba(212,193,163,0.22))] transition-transform duration-700 group-hover:scale-[1.02]" />
+            <div className="overflow-hidden rounded-[34px] border border-white/70 bg-white/70 p-4 shadow-[0_24px_80px_rgba(22,25,90,0.12)] backdrop-blur">
+              <img
+                src="/images/жку.png"
+                alt='ТРЕНІНГ "ЗАКОХАТИСЯ ЗНОВУ!"'
+                className="aspect-[4/5] w-full rounded-[26px] object-cover"
+              />
+              <p className="mt-4 text-center text-lg leading-8 text-[#111] md:text-xl">
+                як відновити інтимну подружню близькість тим, у кого вона згасає
+              </p>
             </div>
           </div>
         </div>
@@ -143,25 +149,30 @@ export default function FallInLoveAgainPage() {
               <h3 className="mt-4 text-xl leading-snug text-[#16195a] md:text-2xl">
                 {item.title}
               </h3>
-              {item.text ? (
-                <p className="mx-auto mt-4 max-w-[290px] text-base leading-8 text-[#222]">
-                  {item.text}
-                </p>
-              ) : null}
+              <p className="mx-auto mt-4 max-w-[290px] text-base leading-8 text-[#222]">
+                {item.text}
+              </p>
             </div>
           ))}
         </div>
 
-        <div className="mx-auto mt-14 max-w-[800px]">
-        <div className="grid items-center gap-8 rounded-[34px] border border-white/70 bg-white/70 p-6 shadow-[0_24px_80px_rgba(22,25,90,0.08)] backdrop-blur md:grid-cols-2">           
-            <div className="rounded-[26px] border border-dashed border-[#16195a]/20 bg-[linear-gradient(135deg,rgba(212,193,163,0.25),rgba(22,25,90,0.06))] aspect-[4/5]" />
-            <div className="text-center md:text-left">
-            <p className="mt-4 text-4xl text-center leading-10 text-[#111]">
-                Стрес в житті, виснаження на роботі, народження дітей, ситуація в країні - допомагає інтимній сфері згасати
-            </p>
+        <div className="mx-auto mt-14 max-w-[1100px]">
+          <div className="grid items-center gap-8 rounded-[34px] border border-white/70 bg-white/70 p-6 shadow-[0_24px_80px_rgba(22,25,90,0.08)] backdrop-blur md:grid-cols-[0.9fr_1.1fr]">
+            <div>
+              <img
+                src="/images/жку (1).png"
+                alt="Стрес в житті, виснаження на роботі, народження дітей, ситуація в країні - допомагає інтимній сфері згасати"
+                className="aspect-[4/5] w-full rounded-[26px] object-cover"
+              />
             </div>
 
-        </div>
+            <div className="text-center">
+              <p className="text-3xl leading-[1.35] text-[#111] md:text-4xl">
+                Стрес в житті, виснаження на роботі, народження дітей, ситуація в
+                країні - допомагає інтимній сфері згасати
+              </p>
+            </div>
+          </div>
         </div>
 
         <p className="mx-auto mt-10 max-w-[950px] text-center text-2xl leading-relaxed text-[#111] md:text-3xl">
@@ -219,7 +230,7 @@ export default function FallInLoveAgainPage() {
         <div className="mx-auto max-w-[1350px] px-6 py-20 md:px-10 md:py-24">
           <SectionTitle>що чекає вас на тренінгу?</SectionTitle>
 
-          <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-2">
             {trainingIncludes.map((item) => (
               <div
                 key={item}
@@ -250,128 +261,180 @@ export default function FallInLoveAgainPage() {
           ))}
         </div>
       </section>
-        <section className="bg-[#efefef]">
-        <div className="mx-auto max-w-[1400px] px-6 py-20 md:px-10 md:py-24">
-            <div className="space-y-24">
-            <div>
-                <h2 className="text-center text-3xl font-normal uppercase tracking-tight text-black md:text-5xl">
-                ВАРТІСТЬ УЧАСТІ ПАКЕТ &quot;САМОСТІЙНИЙ&quot;
-                </h2>
 
-                <div className="mt-12 rounded-[28px] bg-[#f5f5f5] px-8 py-10 shadow-[0_8px_30px_rgba(0,0,0,0.04)] md:px-12">
-                <div className="grid items-center gap-10 xl:grid-cols-[260px_40px_1fr_180px]">
-                    <div className="text-center">
-                    <h3 className="text-[26px] font-semibold leading-tight text-black">
-                        Пакет
-                        <br />
-                        &quot;Самостійний&quot;
-                    </h3>
-
-                    <div className="mt-8 flex items-end justify-center gap-2">
-                        <span className="text-[22px] leading-none text-black">₴</span>
-                        <span className="text-[64px] font-light leading-none text-black">
-                        1800
-                        </span>
-                    </div>
-                    </div>
-
-                    <div className="hidden h-full items-center justify-center xl:flex">
-                    <div className="flex h-full flex-col items-center justify-between py-2 text-[28px] leading-none text-black">
-                        <span>•</span>
-                        <span>•</span>
-                        <span>•</span>
-                        <span>•</span>
-                    </div>
-                    </div>
-
-                    <div className="space-y-8 text-center xl:text-center">
-                    <p className="text-[22px] leading-relaxed text-[#3d3d3d]">
-                        Теоретичний матеріал у форматі відеоуроків
-                    </p>
-                    <p className="text-[22px] leading-relaxed text-[#3d3d3d]">
-                        Завдання для обговорення в парі
-                    </p>
-                    <p className="text-[22px] leading-relaxed text-[#3d3d3d]">
-                        Доступ до всіх відеоуроків на 3 місяці
-                    </p>
-                    </div>
-
-                    <div className="flex justify-center xl:justify-end">
-                    <a
-                        href="#"
-                        className="inline-flex min-w-[128px] items-center justify-center bg-[#960018] px-8 py-5 text-xl font-semibold uppercase tracking-[0.02em] text-white transition duration-300 hover:opacity-90"
-                    >
-                        ОПЛАТИТИ
-                    </a>
-                    </div>
-                </div>
-                </div>
-            </div>
-
-            <div>
-                <h2 className="text-center text-3xl font-normal uppercase tracking-tight text-black md:text-5xl">
-                ВАРТІСТЬ УЧАСТІ ПАКЕТ &quot;ЗІ ЗВОРОТНІМ ЗВ&apos;ЯЗКОМ&quot;
-                </h2>
-
-                <div className="mt-12 rounded-[28px] bg-[#f5f5f5] px-8 py-10 shadow-[0_8px_30px_rgba(0,0,0,0.04)] md:px-12">
-                <div className="grid items-center gap-10 xl:grid-cols-[260px_40px_1fr_180px]">
-                    <div className="text-center">
-                    <h3 className="text-[26px] font-semibold leading-tight text-black">
-                        Пакет &quot;Зі
-                        <br />
-                        зворотнім
-                        <br />
-                        зв&apos;язком&quot;
-                    </h3>
-
-                    <div className="mt-8 flex items-end justify-center gap-2">
-                        <span className="text-[22px] leading-none text-black">₴</span>
-                        <span className="text-[64px] font-light leading-none text-black">
-                        2800
-                        </span>
-                    </div>
-                    </div>
-
-                    <div className="hidden h-full items-center justify-center xl:flex">
-                    <div className="flex h-full flex-col items-center justify-between py-2 text-[28px] leading-none text-black">
-                        <span>•</span>
-                        <span>•</span>
-                        <span>•</span>
-                        <span>•</span>
-                    </div>
-                    </div>
-
-                    <div className="space-y-8 text-center xl:text-center">
-                    <p className="text-[22px] leading-relaxed text-[#3d3d3d]">
-                        Теоретичний матеріал у форматі відеоуроків
-                    </p>
-                    <p className="text-[22px] leading-relaxed text-[#3d3d3d]">
-                        Зворотній зв&apos;язок від Ірини Табаки
-                    </p>
-                    <p className="text-[22px] leading-relaxed text-[#3d3d3d]">
-                        Доступ до всіх відеоуроків на 6 місяців
-                    </p>
-                    </div>
-
-                    <div className="flex justify-center xl:justify-end">
-                    <a
-                        href="#"
-                        className="inline-flex min-w-[128px] items-center justify-center bg-[#960018] px-8 py-5 text-xl font-semibold uppercase tracking-[0.02em] text-white transition duration-300 hover:opacity-90"
-                    >
-                        ОПЛАТИТИ
-                    </a>
-                    </div>
-                </div>
-                </div>
-            </div>
-            </div>
+      <section className="mx-auto max-w-[1400px] px-6 pb-6 md:px-10 md:pb-10">
+        <div className="overflow-hidden rounded-[34px] border border-white/70 bg-white/70 p-4 shadow-[0_24px_80px_rgba(22,25,90,0.08)] backdrop-blur">
+          <img
+            src="/images/жку3.png"
+            alt='ТРЕНІНГ "ЗАКОХАТИСЯ ЗНОВУ!"'
+            className="aspect-[16/7] w-full rounded-[26px] object-cover"
+          />
+          <p className="mt-4 text-center text-lg leading-8 text-[#111] md:text-xl">
+            ТРЕНІНГ &quot;ЗАКОХАТИСЯ ЗНОВУ!&quot;
+          </p>
         </div>
-        </section>
+      </section>
+
+      <section className="bg-[#efefef]">
+        <div className="mx-auto max-w-[1400px] px-6 py-20 md:px-10 md:py-24">
+          <div className="space-y-24">
+            <div>
+              <p className="text-center text-3xl font-normal uppercase tracking-tight text-black md:text-5xl">
+                ВАРТІСТЬ УЧАСТІ
+              </p>
+              <h2 className="mt-4 text-center text-3xl font-normal uppercase tracking-tight text-black md:text-5xl">
+                ПАКЕТ &quot;САМОСТІЙНИЙ&quot;
+              </h2>
+
+              <div className="mt-12 rounded-[28px] bg-[#f5f5f5] px-8 py-10 shadow-[0_8px_30px_rgba(0,0,0,0.04)] md:px-12">
+                <div className="grid items-center gap-10 xl:grid-cols-[260px_40px_1fr_220px]">
+                  <div className="text-center">
+                    <h3 className="text-[26px] font-semibold leading-tight text-black">
+                      Пакет
+                      <br />
+                      &quot;Самостійний&quot;
+                    </h3>
+
+                    <div className="mt-8 flex items-end justify-center gap-2">
+                      <span className="text-[22px] leading-none text-black">
+                        ₴
+                      </span>
+                      <span className="text-[64px] font-light leading-none text-black">
+                        1800
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="hidden h-full items-center justify-center xl:flex">
+                    <div className="flex h-full flex-col items-center justify-between py-2 text-[28px] leading-none text-black">
+                      <span>•</span>
+                      <span>•</span>
+                      <span>•</span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-8 text-center">
+                    <p className="text-[22px] leading-relaxed text-[#3d3d3d]">
+                      Теоретичний матеріал у форматі відеоуроків
+                    </p>
+                    <p className="text-[22px] leading-relaxed text-[#3d3d3d]">
+                      Завдання для обговорення в парі
+                    </p>
+                    <p className="text-[22px] leading-relaxed text-[#3d3d3d]">
+                      Доступ до всіх відеоуроків на 3 місяці
+                    </p>
+                  </div>
+
+                  <div className="flex justify-center xl:justify-end">
+                    {paymentLinks.self ? (
+                      <a
+                        href="https://secure.wayforpay.com/button/b0b07999feeb4"
+                        className="inline-flex min-w-[150px] items-center justify-center rounded-full bg-[#960018] px-8 py-5 text-xl font-semibold text-white transition duration-300 hover:opacity-90"
+                      >
+                        Оплатити
+                      </a>
+                    ) : (
+                      <button
+                        type="button"
+                        className="inline-flex min-w-[150px] items-center justify-center rounded-full bg-[#960018] px-8 py-5 text-xl font-semibold text-white transition duration-300 hover:opacity-90"
+                      >
+                        Оплатити
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <p className="text-center text-3xl font-normal uppercase tracking-tight text-black md:text-5xl">
+                ВАРТІСТЬ УЧАСТІ
+              </p>
+              <h2 className="mt-4 text-center text-3xl font-normal uppercase tracking-tight text-black md:text-5xl">
+                ПАКЕТ &quot;ЗІ ЗВОРОТНІМ ЗВ&apos;ЯЗКОМ&quot;
+              </h2>
+
+              <div className="mt-12 rounded-[28px] bg-[#f5f5f5] px-8 py-10 shadow-[0_8px_30px_rgba(0,0,0,0.04)] md:px-12">
+                <div className="grid items-center gap-10 xl:grid-cols-[260px_40px_1fr_220px]">
+                  <div className="text-center">
+                    <h3 className="text-[26px] font-semibold leading-tight text-black">
+                      Пакет &quot;Зі
+                      <br />
+                      зворотнім
+                      <br />
+                      зв&apos;язком&quot;
+                    </h3>
+
+                    <div className="mt-8 flex items-end justify-center gap-2">
+                      <span className="text-[22px] leading-none text-black">
+                        ₴
+                      </span>
+                      <span className="text-[64px] font-light leading-none text-black">
+                        2800
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="hidden h-full items-center justify-center xl:flex">
+                    <div className="flex h-full flex-col items-center justify-between py-2 text-[28px] leading-none text-black">
+                      <span>•</span>
+                      <span>•</span>
+                      <span>•</span>
+                      <span>•</span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-8 text-center">
+                    <p className="text-[22px] leading-relaxed text-[#3d3d3d]">
+                      Теоретичний матеріал у форматі відеоуроків
+                    </p>
+                    <p className="text-[22px] leading-relaxed text-[#3d3d3d]">
+                      Завдання для обговорення в парі
+                    </p>
+                    <p className="text-[22px] leading-relaxed text-[#3d3d3d]">
+                      Зворотній зв&apos;язок від Ірини Табаки
+                    </p>
+                    <p className="text-[22px] leading-relaxed text-[#3d3d3d]">
+                      Доступ до всіх відеоуроків на 6 місяців
+                    </p>
+                  </div>
+
+                  <div className="flex justify-center xl:justify-end">
+                    {paymentLinks.feedback ? (
+                      <a
+                        href="https://secure.wayforpay.com/button/b72250a73d158"
+                        className="inline-flex min-w-[150px] items-center justify-center rounded-full bg-[#960018] px-8 py-5 text-xl font-semibold text-white transition duration-300 hover:opacity-90"
+                      >
+                        Оплатити
+                      </a>
+                    ) : (
+                      <button
+                        type="button"
+                        className="inline-flex min-w-[150px] items-center justify-center rounded-full bg-[#960018] px-8 py-5 text-xl font-semibold text-white transition duration-300 hover:opacity-90"
+                      >
+                        Оплатити
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-[#16195a] text-white">
         <div className="mx-auto grid max-w-[1350px] items-center gap-10 px-6 py-20 md:px-10 md:py-24 xl:grid-cols-[0.85fr_1.15fr]">
           <div className="mx-auto w-full max-w-[460px]">
             <div className="rounded-[34px] border border-white/15 bg-white/10 p-4 backdrop-blur">
-              <div className="aspect-[4/5] rounded-[26px] border border-dashed border-white/20 bg-white/5" />
+              <img
+                src="/images/yaa.jpg"
+                alt="Ірина Табака"
+                className="aspect-[4/5] w-full rounded-[26px] object-cover"
+              />
+              <p className="mt-4 text-center text-lg leading-8 text-white md:text-xl">
+                Ірина Табака
+              </p>
             </div>
           </div>
 
@@ -395,11 +458,7 @@ export default function FallInLoveAgainPage() {
       </section>
 
       <section className="mx-auto max-w-[1100px] px-6 py-20 text-center md:px-10 md:py-24">
-        <SectionTitle>є питання?</SectionTitle>
-
-        <p className="mx-auto mt-8 max-w-[700px] text-xl leading-relaxed text-[#111] md:text-2xl">
-          Залишились питання? Пишіть!
-        </p>
+        <SectionTitle>Є питання?</SectionTitle>
 
         <div className="mt-10 flex flex-col items-center gap-4">
           <a
@@ -418,9 +477,6 @@ export default function FallInLoveAgainPage() {
         </div>
 
         <div className="mt-14 border-t border-[#16195a]/10 pt-8">
-          <p className="text-sm uppercase tracking-[0.3em] text-[#16195a]/60">
-            Онлайн-школа
-          </p>
           <p className="mt-4 text-sm text-[#16195a]/70">
             Авторське право © 2026 Всі права захищено
           </p>
