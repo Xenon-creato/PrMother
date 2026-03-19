@@ -44,7 +44,7 @@ export default function RootLayout({
             fbq('init', '1161478935965119');
             fbq('track', 'PageView');  
             fbq('track', 'Lead');  
-            fbq('track', 'Purchuse');  
+            fbq('track', 'Purchase');  
 
           `}
         </Script>
