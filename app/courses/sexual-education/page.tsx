@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Image from "next/image";
 
 const topics = [
   `Наше тіло та важливість турботи про нього (сон, харчування, спорт і т.д.)`,
@@ -105,7 +105,7 @@ export default function SexualEducationPage() {
             </span>
 
             <h1 className="max-w-4xl text-4xl font-light leading-tight md:text-5xl lg:text-6xl">
-              Курс "Статеве виховання" – для підлітків та їх батьків
+              Курс «Статеве виховання» – для підлітків та їх батьків
             </h1>
 
             <div className="mx-auto mt-7 h-px w-40 bg-gradient-to-r from-transparent via-[#b78b62] to-transparent" />
@@ -118,12 +118,28 @@ export default function SexualEducationPage() {
 
           <div className="fade-up stagger-1">
             <div className="overflow-hidden rounded-[2rem] border border-white/70 bg-white/55 p-4 shadow-[0_20px_80px_-32px_rgba(42,33,28,0.35)] backdrop-blur">
-              <div className="photo-frame aspect-[4/5] w-full rounded-[1.5rem] border border-dashed border-[#d0b49b] bg-gradient-to-br from-[#fbf7f2] via-[#f2e8df] to-[#e9d8c8]" />
+              <CoursePhoto
+                src="/images/sexual-education-hero.jpg"
+                alt="Підлітки, які разом проводять час"
+                priority
+                sizes="(min-width: 1024px) 42vw, 100vw"
+                className="aspect-[4/5] w-full rounded-[1.5rem] border border-[#d0b49b] bg-gradient-to-br from-[#fbf7f2] via-[#f2e8df] to-[#e9d8c8]"
+              />
             </div>
 
             <div className="mt-4 grid grid-cols-2 gap-4">
-              <div className="photo-frame aspect-[4/3] rounded-[1.35rem] border border-dashed border-[#d0b49b] bg-white/60 backdrop-blur" />
-              <div className="photo-frame aspect-[4/3] rounded-[1.35rem] border border-dashed border-[#d0b49b] bg-white/60 backdrop-blur" />
+              <CoursePhoto
+                src="/images/sexual-education-workshop-table.jpg"
+                alt="Заняття з дітьми за столом"
+                sizes="(min-width: 1024px) 21vw, 50vw"
+                className="aspect-[4/3] rounded-[1.35rem] border border-[#d0b49b] bg-white/60 backdrop-blur"
+              />
+              <CoursePhoto
+                src="/images/sexual-education-workshop-circle.jpg"
+                alt="Заняття з дітьми у колі"
+                sizes="(min-width: 1024px) 21vw, 50vw"
+                className="aspect-[4/3] rounded-[1.35rem] border border-[#d0b49b] bg-white/60 backdrop-blur"
+              />
             </div>
           </div>
         </div>
@@ -310,12 +326,40 @@ export default function SexualEducationPage() {
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
             <div className="fade-up">
               <div className="overflow-hidden rounded-[2rem] border border-white/70 bg-white/55 p-4 shadow-[0_20px_80px_-32px_rgba(42,33,28,0.35)] backdrop-blur">
-                <div className="photo-frame aspect-[4/5] w-full rounded-[1.5rem] border border-dashed border-[#d0b49b] bg-gradient-to-br from-[#fbf7f2] via-[#f2e8df] to-[#e9d8c8]" />
+                <CoursePhoto
+                  src="/images/sexual-education-iryna.jpg"
+                  alt="Ірина Табака, авторка курсу"
+                  sizes="(min-width: 1024px) 36vw, 100vw"
+                  className="aspect-[4/5] w-full rounded-[1.5rem] border border-[#d0b49b] bg-gradient-to-br from-[#fbf7f2] via-[#f2e8df] to-[#e9d8c8]"
+                />
               </div>
 
               <div className="mt-4 grid grid-cols-2 gap-4">
-                <div className="photo-frame aspect-[4/3] rounded-[1.35rem] border border-dashed border-[#d0b49b] bg-white/60 backdrop-blur" />
-                <div className="photo-frame aspect-[4/3] rounded-[1.35rem] border border-dashed border-[#d0b49b] bg-white/60 backdrop-blur" />
+                <CoursePhoto
+                  src="/images/sexual-education-online-1.jpg"
+                  alt="Онлайн-заняття з Іриною Табакою"
+                  sizes="(min-width: 1024px) 18vw, 50vw"
+                  className="aspect-[4/3] rounded-[1.35rem] border border-[#d0b49b] bg-white/60 backdrop-blur"
+                />
+                <CoursePhoto
+                  src="/images/sexual-education-online-2.jpg"
+                  alt="Учасники онлайн-заняття"
+                  sizes="(min-width: 1024px) 18vw, 50vw"
+                  className="aspect-[4/3] rounded-[1.35rem] border border-[#d0b49b] bg-white/60 backdrop-blur"
+                />
+                <CoursePhoto
+                  src="/images/sexual-education-online-3.jpg"
+                  alt="Група учасників онлайн-заняття"
+                  sizes="(min-width: 1024px) 18vw, 50vw"
+                  className="aspect-[4/3] rounded-[1.35rem] border border-[#d0b49b] bg-white/60 backdrop-blur"
+                />
+                <CoursePhoto
+                  src="/images/sexual-education-certificate.jpg"
+                  alt="Сертифікат Ірини Табаки зі статевої та сексуальної грамотності"
+                  sizes="(min-width: 1024px) 18vw, 50vw"
+                  fit="contain"
+                  className="aspect-[4/3] rounded-[1.35rem] border border-[#d0b49b] bg-white/60 backdrop-blur"
+                />
               </div>
             </div>
 
@@ -335,5 +379,38 @@ export default function SexualEducationPage() {
         </div>
       </section>
     </main>
+  );
+}
+
+type CoursePhotoProps = {
+  src: string;
+  alt: string;
+  className: string;
+  sizes: string;
+  priority?: boolean;
+  fit?: "cover" | "contain";
+};
+
+function CoursePhoto({
+  src,
+  alt,
+  className,
+  sizes,
+  priority = false,
+  fit = "cover",
+}: CoursePhotoProps) {
+  return (
+    <div className={`photo-frame relative overflow-hidden ${className}`}>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        priority={priority}
+        sizes={sizes}
+        className={`transition-transform duration-700 hover:scale-[1.03] ${
+          fit === "contain" ? "object-contain p-1.5" : "object-cover"
+        }`}
+      />
+    </div>
   );
 }
