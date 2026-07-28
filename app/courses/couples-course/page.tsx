@@ -347,7 +347,7 @@ export default function CouplesCoursePage() {
               ЗАЛИШИЛИСЬ ПИТАННЯ? ЗАДАВАЙТЕ!
             </h3>
             <p className="mt-6 text-lg leading-8 text-[#1f1f1f]/85">
-              тел.: 097-408-37-50
+              тел.: +38 (097) 408 37 50
             </p>
             <a
               href="https://t.me/iryna_tabaka"

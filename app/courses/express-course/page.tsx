@@ -36,11 +36,13 @@ const audienceItems = [
 ];
 
 const authorPoints = [
-  `вчитель симпто-термального методу розпізнавання плідності`,
-  `тренер зі статевої та сексуальної грамотності з християнськими цінностями`,
+  `Вчитель симпто-термального методу розпізнавання плідності з 8-річним досвідом викладання та міжнародною сертифікацією (NFPTA)`,
+  `Тренер зі статевої та сексуальної грамотності (випускниця Школи статевого виховання Національного інституту сексології та сексуального здоров'я, м. Київ)`,
+  `Викладач Інституту богословських наук Непорочної Діви Марії, РКЦ в м. Городку Хмельницької обл. та в Інституті св. Томи Аквінського, м. Київ`,
   `член Української Асоціації Християнської Психології`,
+  `дружина священика (м. Люботин Харківської обл.)`,
+  `мама трьох підлітків`,
   `катехит`,
-  `щаслива дружина і мама 3 підлітків`,
 ];
 
 const topics = [
@@ -141,7 +143,7 @@ function MediaPlaceholder({
   className?: string;
 }) {
   return (
-              <div className="relative min-h-[500px] overflow-hidden rounded-[30px]">
+              <div className={`relative min-h-[500px] overflow-hidden rounded-[30px] ${className}`}>
                 <Image
                   src="/images/yaa.jpg"
                   alt="Ірина Табака"
@@ -198,8 +200,8 @@ export default function FormulaLoveDemoPage() {
               Уже сьогодні
             </div>
 
-            <h1 className="mt-8 text-4xl font-light leading-[1.1] text-[#16195a] md:text-6xl">
-              Експрес-курс
+            <h1 className="mt-8 text-5xl font-light leading-[1.06] text-[#16195a] md:text-7xl">
+              Експрес-курс!
               <br />
               методу розпізнавання плідності
             </h1>
@@ -440,7 +442,7 @@ export default function FormulaLoveDemoPage() {
             href="tel:+3800974083750"
             className="text-lg leading-8 text-[#16195a] transition-opacity duration-300 hover:opacity-70 md:text-xl"
           >
-            +380-097-408-37-50
+            +38 (097) 408 37 50
           </a>
 
           <a

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const painPoints = [
   {
     number: "01",
@@ -209,12 +211,12 @@ const specialOffers = [
 ];
 
 const authorBullets = [
-  "вчитель симпто-термального методу розпізнавання плідності",
-  "тренер зі статевої та сексуальної грамотності",
-  "член Української Асоціації Християнської Психології",
-  "член Асоціації сексологів та сексотерапевтів України",
+  "Вчитель симпто-термального методу розпізнавання плідності з 8-річним досвідом викладання та міжнародною сертифікацією (NFPTA)",
+  "Тренер зі статевої та сексуальної грамотності (випускниця Школи статевого виховання Національного інституту сексології та сексуального здоров'я, м. Київ)",
+  "Викладач Інституту богословських наук Непорочної Діви Марії, РКЦ в м. Городку Хмельницької обл. та в Інституті св. Томи Аквінського, м. Київ",
+  "дружина священика (м. Люботин Харківської обл.)",
+  "мама трьох підлітків",
   "катехит",
-  "щаслива дружина і мама 3 діток",
 ];
 
 const faqs = [
@@ -256,11 +258,17 @@ const faqs = [
   },
 ];
 
-function SectionTitle({ children }: { children: React.ReactNode }) {
+function SectionTitle({
+  children,
+  light = false,
+}: {
+  children: React.ReactNode;
+  light?: boolean;
+}) {
   return (
     <div className="mx-auto max-w-4xl text-center">
-      <div className="mx-auto mb-6 h-px w-20 bg-[#16195a]/20" />
-      <h2 className="text-3xl font-normal uppercase tracking-[0.08em] text-[#111] md:text-5xl">
+      <div className={`mx-auto mb-6 h-px w-20 ${light ? "bg-white/30" : "bg-[#16195a]/20"}`} />
+      <h2 className={`text-3xl font-normal uppercase tracking-[0.08em] md:text-5xl ${light ? "text-white" : "text-[#111]"}`}>
         {children}
       </h2>
     </div>
@@ -306,28 +314,37 @@ export default function FormuleLovePage() {
         <div className="absolute right-0 top-24 h-[320px] w-[320px] rounded-full bg-[#c4a76a]/15 blur-3xl" />
 
         <div className="mx-auto grid max-w-[1400px] gap-14 px-6 py-20 md:px-10 md:py-28 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-          <div className="text-center lg:text-left">
+          <div className="text-center">
             <p className="text-sm uppercase tracking-[0.35em] text-[#16195a]/60">
-              Онлайн-школа
+              Тренінг
             </p>
 
             <h1 className="mt-6 text-4xl font-normal uppercase leading-[1.12] tracking-[0.06em] text-[#111] md:text-6xl">
-              "Формула любові - 2.0"
+              «Формула любові – 2.0»
             </h1>
 
-            <div className="mx-auto mt-8 h-px w-24 bg-[#16195a]/20 lg:mx-0" />
+            <div className="mx-auto mt-8 h-px w-24 bg-[#16195a]/20" />
 
-            <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-black/80 md:text-xl lg:mx-0">
+            <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-black/80 md:text-xl">
               за 4 місяці допоможе Вам усунути перешкоди на шляху до якісних
               інтимних стосунків у подружжі!
             </p>
 
-            <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-black/80 md:text-xl lg:mx-0">
+            <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-black/80 md:text-xl">
               А також буде дуже корисним для пар, які мають труднощі із зачаттям
             </p>
           </div>
 
-          <PhotoPlaceholder className="min-h-[420px] w-full" />
+          <div className="mx-auto w-full max-w-[500px] rounded-[32px] border border-[#16195a]/10 bg-white p-3 shadow-[0_20px_70px_rgba(0,0,0,0.1)]">
+            <Image
+              src="/images/formula-love-family.png"
+              alt="Сімейна фотографія"
+              width={742}
+              height={1280}
+              priority
+              className="h-auto w-full rounded-[24px]"
+            />
+          </div>
         </div>
       </section>
 
@@ -348,7 +365,12 @@ export default function FormuleLovePage() {
 
       <section className="bg-white/70">
         <div className="mx-auto grid max-w-[1400px] gap-12 px-6 py-20 md:px-10 md:py-24 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
-          <PhotoPlaceholder className="order-2 min-h-[360px] lg:order-1" />
+          <div className="order-2 lg:order-1">
+            <YouTubeEmbed
+              videoId="5yhCJ2yE290"
+              title="Відео про метод розпізнавання плідності"
+            />
+          </div>
 
           <div className="order-1 text-center lg:order-2">
             <SectionTitle>
@@ -370,7 +392,7 @@ export default function FormuleLovePage() {
             </p>
 
             <p className="mx-auto mt-6 max-w-4xl text-lg leading-8 text-black/80 md:text-xl">
-              Маючи такі знання, пара може відповідно "організовувати" своє
+              Маючи такі знання, пара може відповідно «організовувати» своє
               інтимне життя. Якщо зачаття дитини відкладається, для статевих
               стосунків вибирається період, коли завагітніти неможливо.
             </p>
@@ -393,13 +415,15 @@ export default function FormuleLovePage() {
           сексуальності:
         </SectionTitle>
 
-        <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {sexualityTopics.map((item) => (
+        <div className="mt-14 grid gap-5 md:grid-cols-2 xl:grid-cols-6">
+          {sexualityTopics.map((item, index) => (
             <div
               key={item}
-              className="rounded-[26px] border border-[#16195a]/8 bg-white p-7 text-center shadow-[0_12px_34px_rgba(0,0,0,0.05)] transition-transform duration-500 hover:-translate-y-1"
+              className={`flex min-h-[150px] items-center justify-center rounded-[26px] border border-[#16195a]/8 bg-white p-7 text-center shadow-[0_12px_34px_rgba(0,0,0,0.05)] transition-transform duration-500 hover:-translate-y-1 xl:col-span-2 ${
+                index === sexualityTopics.length - 2 ? "xl:col-start-2" : ""
+              }`}
             >
-              <p className="text-lg leading-8 text-[#111] md:text-xl">{item}</p>
+              <p className="text-xl leading-8 text-[#111] md:text-2xl">{item}</p>
             </div>
           ))}
         </div>
@@ -407,7 +431,7 @@ export default function FormuleLovePage() {
         <section className="bg-[#e7e3d7]">
         <div className="mx-auto grid max-w-[1400px] items-center gap-12 px-6 py-20 md:px-10 md:py-24 lg:grid-cols-[1.05fr_0.95fr]">
             <div className="text-center lg:text-left">
-            <p className="text-[34px] font-normal leading-[1.7] text-black md:text-[48px] md:leading-[1.55] lg:max-w-[700px]">
+            <p className="text-2xl font-normal leading-[1.5] text-black md:text-4xl md:leading-[1.4] lg:max-w-[700px]">
                 Також ми будемо
                 <br />
                 вчитися дбати
@@ -433,12 +457,8 @@ export default function FormuleLovePage() {
             <div className="flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[520px]">
 
-                <div className="relative overflow-hidden rounded-[30px] border border-[#16195a]/10 bg-transparent p-6">
-                <img
-                    src="/images/formule-love-care.png"
-                    alt="Ілюстрація"
-                    className="mx-auto w-full max-w-[420px] object-contain"
-                />
+                <div className="rounded-[30px] border border-[#16195a]/10 bg-white/55 p-3 shadow-[0_16px_45px_rgba(0,0,0,0.06)]">
+                <PhotoPlaceholder className="aspect-[4/5] min-h-[340px] w-full" />
                 </div>
             </div>
             </div>
@@ -512,6 +532,18 @@ export default function FormuleLovePage() {
         </div>
       </section>
 
+      <section className="bg-[#f1ede5]">
+        <div className="mx-auto max-w-[1100px] px-6 py-20 md:px-10 md:py-24">
+          <SectionTitle>Відеовідгук</SectionTitle>
+          <div className="mx-auto mt-12 max-w-[860px]">
+            <YouTubeEmbed
+              videoId="CwV-R5N1fA0"
+              title="Відеовідгук про тренінг «Формула любові»"
+            />
+          </div>
+        </div>
+      </section>
+
       <section className="bg-white/70">
         <div className="mx-auto max-w-[1400px] px-6 py-20 md:px-10 md:py-24">
           <SectionTitle>що чекає вас на тренінгу?</SectionTitle>
@@ -538,7 +570,7 @@ export default function FormuleLovePage() {
     <section className="bg-[#e7e3d7]">
         <div className="mx-auto grid max-w-[1400px] items-center gap-12 px-6 py-20 md:px-10 md:py-24 lg:grid-cols-[1.05fr_0.95fr]">
             <div className="text-center lg:text-left">
-            <p className="text-[34px] font-normal leading-[1.7] text-black md:text-[48px] md:leading-[1.55] lg:max-w-[700px]">
+            <p className="text-2xl font-normal leading-[1.5] text-black md:text-4xl md:leading-[1.4] lg:max-w-[700px]">
                 Це не боляче і не 
                 <br />
                 страшно :). Навіть
@@ -561,11 +593,13 @@ export default function FormuleLovePage() {
             <div className="flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[520px]">
 
-                <div className="relative overflow-hidden rounded-[30px] border border-[#16195a]/10 bg-transparent p-6">
-                <img
-                    src="/images/formule-love-care.png"
-                    alt="Ілюстрація"
-                    className="mx-auto w-full max-w-[420px] object-contain"
+                <div className="relative overflow-hidden rounded-[30px] border border-[#16195a]/10 bg-white/55 p-6 shadow-[0_16px_45px_rgba(0,0,0,0.06)]">
+                <Image
+                    src="/images/formula-love-safety.svg"
+                    alt="Ілюстрація підтримки та впевненого навчання"
+                    width={517}
+                    height={474}
+                    className="mx-auto h-auto w-full max-w-[420px] object-contain"
                 />
                 </div>
             </div>
@@ -595,7 +629,7 @@ export default function FormuleLovePage() {
         <div className="mx-auto max-w-[1400px] px-6 py-20 md:px-10 md:py-24">
           <SectionTitle>Програма тренінгу</SectionTitle>
 
-          <p className="mx-auto mt-8 max-w-5xl text-center text-lg leading-8 text-black/80 md:text-xl">
+          <p className="mx-auto mt-8 max-w-5xl text-center text-xl leading-9 text-black/80 md:text-2xl">
             Тренінг триває 4 місяці: 4 тижні теорії та 3 місяці особистих
             самоспостережень у супроводі вчителя
           </p>
@@ -614,7 +648,15 @@ export default function FormuleLovePage() {
       </section>
 
       <section className="mx-auto grid max-w-[1400px] gap-12 px-6 py-20 md:px-10 md:py-24 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
-        <PhotoPlaceholder className="min-h-[420px]" />
+        <div className="overflow-hidden rounded-[32px] border border-[#16195a]/10 bg-white p-3 shadow-[0_20px_70px_rgba(0,0,0,0.08)]">
+          <Image
+            src="/images/formula-love-lesia-fihas.jpg"
+            alt="Леся Фігас, вчитель методу розпізнавання плідності"
+            width={510}
+            height={613}
+            className="h-auto w-full rounded-[24px]"
+          />
+        </div>
 
         <div className="text-center">
           <SectionTitle>
@@ -654,7 +696,7 @@ export default function FormuleLovePage() {
         <section className="bg-[#e7e3d7]">
             <div className="mx-auto grid max-w-[1400px] items-center gap-12 px-6 py-20 md:px-10 md:py-24 lg:grid-cols-[1.05fr_0.95fr]">
                 <div className="text-center lg:text-left">
-                <p className="text-[34px] font-normal leading-[1.7] text-black md:text-[48px] md:leading-[1.55] lg:max-w-[700px]">
+                <p className="text-2xl font-normal leading-[1.5] text-black md:text-4xl md:leading-[1.4] lg:max-w-[700px]">
                     А якщо коротко - місце страху займе
                     <br />
                     впевненість, спокій та радість!
@@ -665,11 +707,13 @@ export default function FormuleLovePage() {
                 <div className="flex justify-center lg:justify-end">
                 <div className="relative w-full max-w-[520px]">
 
-                    <div className="relative overflow-hidden rounded-[30px] border border-[#16195a]/10 bg-transparent p-6">
-                    <img
-                        src="/images/formule-love-care.png"
-                        alt="Ілюстрація"
-                        className="mx-auto w-full max-w-[420px] object-contain"
+                    <div className="relative overflow-hidden rounded-[30px] border border-[#16195a]/10 bg-white/55 p-6 shadow-[0_16px_45px_rgba(0,0,0,0.06)]">
+                    <Image
+                        src="/images/formula-love-confidence.svg"
+                        alt="Ілюстрація впевненості та спокою"
+                        width={754}
+                        height={888}
+                        className="mx-auto h-auto w-full max-w-[420px] object-contain"
                     />
                     </div>
                 </div>
@@ -685,6 +729,21 @@ export default function FormuleLovePage() {
               психолога Яніни Лютою-Животовської та духовну розмову зі
               священиком о.Орестом Демком.
             </p>
+
+            <div className="mx-auto mt-8 grid max-w-[700px] gap-5 sm:grid-cols-2">
+              <div className="rounded-[24px] border border-white/15 bg-white/5 p-3">
+                <PhotoPlaceholder className="aspect-[4/5] min-h-[250px] w-full border-white/15 bg-white/5" />
+                <p className="mt-4 text-base font-medium text-white">
+                  Психолог Яніна Люта-Животовська
+                </p>
+              </div>
+              <div className="rounded-[24px] border border-white/15 bg-white/5 p-3">
+                <PhotoPlaceholder className="aspect-[4/5] min-h-[250px] w-full border-white/15 bg-white/5" />
+                <p className="mt-4 text-base font-medium text-white">
+                  Священик о. Орест Демко
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -709,33 +768,41 @@ export default function FormuleLovePage() {
             </SectionTitle>
 
             <h3 className="mx-auto mt-10 max-w-4xl text-2xl font-medium leading-snug text-[#111] lg:mx-0">
-              Аудіо-запис міні-тренінгу "Для тих, хто хоче побудувати міцні
-              романтичні стосунки" з психологом Лідією Кондратик!
+              Аудіо-запис міні-тренінгу «Для тих, хто хоче побудувати міцні
+              романтичні стосунки» з психологом Лідією Кондратик!
             </h3>
 
             <p className="mx-auto mt-6 max-w-4xl text-lg leading-8 text-black/80 md:text-xl lg:mx-0">
               Вже з перших хвилин після реєстрації Ви отримаєте чудову можливість
               дізнатися більше про відмінності між чоловіками та жінками, краще
-              зрозуміти потреби своєї "половинки"
+              зрозуміти потреби своєї «половинки»
             </p>
           </div>
 
-          <PhotoPlaceholder className="min-h-[360px]" />
+          <div className="overflow-hidden rounded-[32px] border border-[#16195a]/10 bg-white p-3 shadow-[0_20px_70px_rgba(0,0,0,0.08)]">
+            <Image
+              src="/images/formula-love-bonus-gifts.png"
+              alt="Подарунки до бонусного матеріалу"
+              width={1280}
+              height={960}
+              className="h-auto w-full rounded-[24px]"
+            />
+          </div>
         </div>
       </section>
 
       <section className="mx-auto max-w-[1400px] px-6 py-20 md:px-10 md:py-24">
         <div className="mx-auto max-w-[980px] rounded-[36px] border border-[#16195a]/10 bg-white p-8 text-center shadow-[0_25px_80px_rgba(0,0,0,0.08)] md:p-12">
-          <p className="text-sm uppercase tracking-[0.35em] text-[#16195a]/60">
-            Участь
+          <p className="text-3xl font-medium leading-tight text-[#16195a] md:text-5xl">
+            Вартість участі 22 000 грн. за 4 місяці тренінгу
           </p>
 
-          <p className="mt-6 text-4xl font-normal text-[#111] md:text-6xl">
-            22000₴
+          <p className="mt-4 text-2xl font-medium text-[#16195a] md:text-3xl">
+            (505$)
           </p>
 
-          <p className="mt-4 text-2xl font-medium leading-8 text-[#16195a] md:text-3xl">
-            Вартість участі 505 $
+          <p className="mt-6 text-xl font-medium leading-8 text-[#111] md:text-2xl">
+            Можна оплачувати помісячно — 5 500 грн./місяць
           </p>
 
           <div className="mx-auto mt-10 grid max-w-4xl gap-4 text-center">
@@ -750,7 +817,7 @@ export default function FormuleLovePage() {
           </div>
 
           <a
-            href="https://forms.gle"
+            href="https://forms.gle/5i1aT1ZJdXDvBpS76"
             target="_blank"
             rel="noreferrer"
             className="mt-10 inline-flex rounded-full bg-[#16195a] px-8 py-4 text-sm uppercase tracking-[0.22em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#202575]"
@@ -772,7 +839,7 @@ export default function FormuleLovePage() {
 
       <section className="bg-[#16195a] text-white">
         <div className="mx-auto max-w-[1200px] px-6 py-20 text-center md:px-10 md:py-24">
-          <SectionTitle>!!! При сплаті 25% ви одразу долучаєтесь до Переднавчання !!!</SectionTitle>
+          <SectionTitle light>!!! При сплаті 25% ви одразу долучаєтесь до Переднавчання !!!</SectionTitle>
 
           <div className="mx-auto mt-12 max-w-4xl rounded-[28px] border border-white/10 bg-white/5 px-8 py-10 backdrop-blur-sm">
             <p className="text-2xl font-medium leading-9">
@@ -783,7 +850,7 @@ export default function FormuleLovePage() {
               них користати!
             </p>
             <p className="mt-6 text-lg leading-8 text-white/85">
-              Можна замовити комусь участь у тренінгу "Фориула любові" як
+              Можна замовити комусь участь у тренінгу «Формула любові» як
               подарунок на весілля
             </p>
           </div>
@@ -873,7 +940,7 @@ export default function FormuleLovePage() {
               href="tel:+3800974083750"
               className="transition-opacity hover:opacity-80"
             >
-              +380-0974083750
+              +38 (097) 408 37 50
             </a>
             <a
               href="mailto:iryna.tabaka@gmail.com"
@@ -885,5 +952,32 @@ export default function FormuleLovePage() {
         </div>
       </section>
     </main>
+  );
+}
+
+function YouTubeEmbed({ videoId, title }: { videoId: string; title: string }) {
+  const href = `https://www.youtube.com/watch?v=${videoId}`;
+
+  return (
+    <div className="overflow-hidden rounded-[32px] border border-[#16195a]/10 bg-white p-3 shadow-[0_20px_70px_rgba(0,0,0,0.1)]">
+      <div className="relative aspect-video overflow-hidden rounded-[24px] bg-[#16195a]">
+        <iframe
+          className="absolute inset-0 h-full w-full"
+          src={`https://www.youtube-nocookie.com/embed/${videoId}`}
+          title={title}
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        />
+      </div>
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        className="mt-4 inline-flex w-full items-center justify-center text-center text-sm font-medium uppercase tracking-[0.16em] text-[#16195a] transition-opacity hover:opacity-65"
+      >
+        Переглянути на YouTube
+      </a>
+    </div>
   );
 }

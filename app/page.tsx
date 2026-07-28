@@ -323,7 +323,7 @@ export default function Home() {
               <p className="text-sm uppercase tracking-[0.2em] text-white/65">
                 Телефон
               </p>
-              <p className="mt-3 text-xl font-medium">+380 97 408 37 50</p>
+              <p className="mt-3 text-xl font-medium">+38 (097) 408 37 50</p>
             </div>
 
             <div>

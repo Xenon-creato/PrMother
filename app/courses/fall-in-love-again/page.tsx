@@ -120,15 +120,12 @@ export default function FallInLoveAgainPage() {
           </div>
 
           <div className="mx-auto w-full max-w-[540px]">
-            <div className="overflow-hidden rounded-[34px] border border-white/70 bg-white/70 p-4 shadow-[0_24px_80px_rgba(22,25,90,0.12)] backdrop-blur">
+            <div className="overflow-hidden rounded-[38px] border border-[#c9a36d]/60 bg-[linear-gradient(135deg,rgba(255,255,255,0.98),rgba(238,226,209,0.92),rgba(255,255,255,0.98))] p-3 shadow-[0_26px_85px_rgba(22,25,90,0.16)]">
               <img
                 src="/images/жку.png"
                 alt='ТРЕНІНГ "ЗАКОХАТИСЯ ЗНОВУ!"'
-                className="aspect-[4/5] w-full rounded-[26px] object-cover"
+                className="aspect-[4/5] w-full rounded-[30px] border border-white/90 object-cover shadow-[inset_0_0_0_1px_rgba(22,25,90,0.08)]"
               />
-              <p className="mt-4 text-center text-lg leading-8 text-[#111] md:text-xl">
-                як відновити інтимну подружню близькість тим, у кого вона згасає
-              </p>
             </div>
           </div>
         </div>
@@ -146,10 +143,10 @@ export default function FallInLoveAgainPage() {
               <p className="text-sm tracking-[0.35em] text-[#b08b57]">
                 {item.number}
               </p>
-              <h3 className="mt-4 text-xl leading-snug text-[#16195a] md:text-2xl">
+              <h3 className="mt-4 text-[21px] leading-snug text-[#16195a] md:text-[26px]">
                 {item.title}
               </h3>
-              <p className="mx-auto mt-4 max-w-[290px] text-base leading-8 text-[#222]">
+              <p className="mx-auto mt-4 max-w-[300px] text-[17px] leading-8 text-[#222] md:text-lg">
                 {item.text}
               </p>
             </div>
@@ -236,7 +233,7 @@ export default function FallInLoveAgainPage() {
                 key={item}
                 className="rounded-[28px] border border-[#16195a]/10 bg-white px-6 py-8 text-center shadow-[0_14px_44px_rgba(17,17,17,0.05)] transition-all duration-500 hover:-translate-y-1.5"
               >
-                <p className="text-lg leading-8 text-[#111] md:text-xl">
+                <p className="text-xl leading-8 text-[#111] md:text-2xl">
                   {item}
                 </p>
               </div>
@@ -370,7 +367,7 @@ export default function FallInLoveAgainPage() {
                         ₴
                       </span>
                       <span className="text-[64px] font-light leading-none text-black">
-                        2800
+                        4200
                       </span>
                     </div>
                   </div>
@@ -460,12 +457,16 @@ export default function FallInLoveAgainPage() {
       <section className="mx-auto max-w-[1100px] px-6 py-20 text-center md:px-10 md:py-24">
         <SectionTitle>Є питання?</SectionTitle>
 
+        <p className="mx-auto mt-8 max-w-[700px] text-xl leading-relaxed text-[#111] md:text-2xl">
+          Залишились питання? Пишіть!
+        </p>
+
         <div className="mt-10 flex flex-col items-center gap-4">
           <a
             href="tel:+3800974083750"
             className="text-lg leading-8 text-[#16195a] transition-opacity duration-300 hover:opacity-70 md:text-xl"
           >
-            +380-0974083750
+            +38 (097) 408 37 50
           </a>
 
           <a
@@ -477,6 +478,9 @@ export default function FallInLoveAgainPage() {
         </div>
 
         <div className="mt-14 border-t border-[#16195a]/10 pt-8">
+          <p className="text-sm uppercase tracking-[0.3em] text-[#16195a]/60">
+            Онлайн-школа
+          </p>
           <p className="mt-4 text-sm text-[#16195a]/70">
             Авторське право © 2026 Всі права захищено
           </p>
