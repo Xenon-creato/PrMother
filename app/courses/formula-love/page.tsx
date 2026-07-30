@@ -458,7 +458,13 @@ export default function FormuleLovePage() {
             <div className="relative w-full max-w-[520px]">
 
                 <div className="rounded-[30px] border border-[#16195a]/10 bg-white/55 p-3 shadow-[0_16px_45px_rgba(0,0,0,0.06)]">
-                <PhotoPlaceholder className="aspect-[4/5] min-h-[340px] w-full" />
+                <Image
+                  src="/images/formula-love-care.svg"
+                  alt="Турбота про себе та стосунки"
+                  width={800}
+                  height={1000}
+                  className="h-auto w-full rounded-[22px]"
+                />
                 </div>
             </div>
             </div>
@@ -738,7 +744,13 @@ export default function FormuleLovePage() {
                 </p>
               </div>
               <div className="rounded-[24px] border border-white/15 bg-white/5 p-3">
-                <PhotoPlaceholder className="aspect-[4/5] min-h-[250px] w-full border-white/15 bg-white/5" />
+                <Image
+                  src="/images/formula-love-priest.jpg"
+                  alt="Священик о. Орест Демко"
+                  width={612}
+                  height={816}
+                  className="h-auto w-full rounded-[18px]"
+                />
                 <p className="mt-4 text-base font-medium text-white">
                   Священик о. Орест Демко
                 </p>
@@ -921,11 +933,11 @@ export default function FormuleLovePage() {
       <section className="bg-[#16195a] text-white">
         <div className="mx-auto max-w-[1100px] px-6 py-20 text-center md:px-10 md:py-24">
           <h2 className="text-3xl font-normal uppercase tracking-[0.08em] md:text-5xl">
-            є питання?
+            Залишились питання?
           </h2>
 
           <p className="mt-8 text-lg leading-8 text-white/90 md:text-xl">
-            Залишились питання? Пишіть!
+            Пишіть
           </p>
 
           <p className="mt-3 text-lg leading-8 text-white/75 md:text-xl">

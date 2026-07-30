@@ -195,26 +195,38 @@ export default function FormulaLoveDemoPage() {
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(22,25,90,0.08),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(203,162,91,0.12),transparent_28%)]" />
         <div className="relative mx-auto max-w-[1440px] px-6 pb-16 pt-28 md:px-10 md:pb-24 md:pt-36">
-          <div className="mx-auto max-w-[1050px] text-center">
-            <div className="inline-flex rounded-full border border-[#16195a]/10 bg-white/80 px-5 py-2 text-sm tracking-[0.18em] text-[#16195a]/70 shadow-sm backdrop-blur">
-              Уже сьогодні
+          <div className="mx-auto grid max-w-[1200px] items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
+            <div className="text-center lg:text-left">
+              <div className="inline-flex rounded-full border border-[#16195a]/10 bg-white/80 px-5 py-2 text-sm tracking-[0.18em] text-[#16195a]/70 shadow-sm backdrop-blur">
+                Уже сьогодні
+              </div>
+
+              <h1 className="mt-8 text-5xl font-light leading-[1.06] text-[#16195a] md:text-7xl">
+                Експрес-курс
+                <br />
+                методу розпізнавання плідності
+              </h1>
+
+              <p className="mx-auto mt-8 max-w-[980px] text-lg leading-8 text-[#202020]/85 md:text-2xl md:leading-10 lg:mx-0">
+                7 уроків та 1 зустріч, які допоможуть Вам зрозуміти,
+                <br />
+                як позбутися страху непланованої вагітності
+                <br />
+                за допомогою методу розпізнавання плідності
+                <br />
+                і розібратися, чи підходить він Вам.
+              </p>
             </div>
 
-            <h1 className="mt-8 text-5xl font-light leading-[1.06] text-[#16195a] md:text-7xl">
-              Експрес-курс!
-              <br />
-              методу розпізнавання плідності
-            </h1>
-
-            <p className="mx-auto mt-8 max-w-[980px] text-lg leading-8 text-[#202020]/85 md:text-2xl md:leading-10">
-              7 уроків та 1 зустріч, які допоможуть Вам зрозуміти,
-              <br/>
-              як позбутися страху непланованої вагітності 
-              <br/>
-              за допомогою методу розпізнавання плідності 
-              <br/>
-              і розібратися, чи підходить він Вам.
-            </p>
+            <Image
+              src="/images/express-course-couple.jpg"
+              alt="Пара в обіймах"
+              width={1365}
+              height={2048}
+              priority
+              sizes="(min-width: 1024px) 36vw, 80vw"
+              className="mx-auto h-auto w-full max-w-[380px] rounded-[34px] border border-white/90 bg-white shadow-[0_22px_70px_rgba(12,18,48,0.14)]"
+            />
           </div>
         </div>
       </section>

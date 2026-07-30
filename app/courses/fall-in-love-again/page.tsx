@@ -455,10 +455,10 @@ export default function FallInLoveAgainPage() {
       </section>
 
       <section className="mx-auto max-w-[1100px] px-6 py-20 text-center md:px-10 md:py-24">
-        <SectionTitle>Є питання?</SectionTitle>
+        <SectionTitle>Залишились питання?</SectionTitle>
 
         <p className="mx-auto mt-8 max-w-[700px] text-xl leading-relaxed text-[#111] md:text-2xl">
-          Залишились питання? Пишіть!
+          Пишіть
         </p>
 
         <div className="mt-10 flex flex-col items-center gap-4">

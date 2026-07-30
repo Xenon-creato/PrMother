@@ -18,7 +18,7 @@ const courses = [
     href: "/courses/fall-in-love-again",
   },
   {
-    title: 'ДЕМО-ВЕРСІЯ "ФОРМУЛИ ЛЮБОВІ"',
+    title: "Експрес-курс з методу розпізнавання плідності",
     href: "/courses/express-course",
   },
   {
