@@ -104,16 +104,6 @@ function SectionTag() {
   );
 }
 
-function MediaPlaceholder({ className = "" }: { className?: string }) {
-  return (
-    <div
-      className={`overflow-hidden rounded-[30px] border border-[#16195a]/10 bg-[linear-gradient(135deg,rgba(22,25,90,0.05),rgba(255,255,255,0.92),rgba(214,180,120,0.16))] shadow-[0_18px_60px_rgba(12,18,48,0.08)] ${className}`}
-    >
-      <div className="h-full w-full bg-[radial-gradient(circle_at_top,rgba(22,25,90,0.07),transparent_48%),linear-gradient(180deg,rgba(255,255,255,0.45),rgba(22,25,90,0.02))]" />
-    </div>
-  );
-}
-
 function SplitMediaBlock({
   reverse = false,
   children,
@@ -169,6 +159,7 @@ export default function MenopauseWithLove() {
               src="/images/menopause-hero-woman.jpg"
               alt="Жінка на інтенсиві про менопаузу"
               priority
+              fit="contain"
               sizes="(min-width: 1024px) 32vw, 75vw"
               className="mx-auto aspect-[3/4] w-full max-w-[330px] rounded-[34px] border border-white/90 bg-white shadow-[0_22px_70px_rgba(12,18,48,0.14)]"
             />
@@ -210,6 +201,7 @@ export default function MenopauseWithLove() {
                   src={member.image}
                   alt={`${member.name} — ${member.role}`}
                   sizes="(min-width: 1280px) 18vw, (min-width: 1024px) 30vw, 50vw"
+                  fit={member.name === "Ірина Табака" ? "contain" : "cover"}
                   className="aspect-[4/5] min-h-[250px] w-full rounded-[20px] bg-[#f7f5f1]"
                 />
                 <div className="mt-5 text-center">

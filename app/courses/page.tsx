@@ -29,6 +29,14 @@ const courses = [
     title: "КУРС ДЛЯ ПАР, ЩО ЗУСТРІЧАЮТЬСЯ",
     href: "/courses/couples-course",
   },
+  {
+    title: "СТАТЕВЕ ВИХОВАННЯ ДІТЕЙ У СВІТЛІ БОЖОГО ЗАДУМУ",
+    href: "/courses/sexual-education-for-parents",
+  },
+  {
+    title: "Я З ТОБОЮ. ПОРУЧ. — КУРС ДЛЯ БАТЬКІВ ПІДЛІТКІВ",
+    href: "/courses/with-teenagers",
+  },
 ];
 
 export default function CoursesPage() {
