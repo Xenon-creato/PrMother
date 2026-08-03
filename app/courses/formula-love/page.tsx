@@ -738,7 +738,13 @@ export default function FormuleLovePage() {
 
             <div className="mx-auto mt-8 grid max-w-[700px] gap-5 sm:grid-cols-2">
               <div className="rounded-[24px] border border-white/15 bg-white/5 p-3">
-                <PhotoPlaceholder className="aspect-[4/5] min-h-[250px] w-full border-white/15 bg-white/5" />
+                <Image
+                  src="/images/formula-love-psychologist.jpg"
+                  alt="Психолог Яніна Люта-Животовська"
+                  width={960}
+                  height={2048}
+                  className="h-auto w-full rounded-[18px]"
+                />
                 <p className="mt-4 text-base font-medium text-white">
                   Психолог Яніна Люта-Животовська
                 </p>
