@@ -38,13 +38,13 @@ const videos = [
   ["Людмила Гридковець", "Фрагмент зустрічі про статеве дозрівання підлітка", "/videos/course-with-teenagers-liudmyla-hrydkovets-web.mp4"],
 ];
 
-const reviews = [
-  "Невимовно ресурсно! Курс для батьків підлітків «Я з Тобою. Поруч» — мега крутий. Дуже вдало підібрані теми лекцій, графік, тривалість і допоміжні матеріали. У всьому відчувається професіоналізм, розуміння проблеми, турбота і любов.",
-  "Курс «Бути поруч» дає опору. Отримала море цінної інформації, а головне — зрозуміла, що можу виховати гарну здорову особистість.",
-  "Величезна подяка, пані Ірино, за такий неоціненний подарунок. Курс багатогранний, наповнив, додав впевненості, спрямував і підштовхнув.",
-  "Це найцінніший подарунок за час мого життя. Дуже дякую всім спікерам та пані Ірині за цінну інформацію для мене.",
-  "Дуже цінний, глибокий, ресурсний курс. Підтримав, надихнув, збудував, зцілив; прийшло багато світла та ясності, куди рухатися далі.",
-  "До виховання підлітків тут підійшли з різних сторін: духовної, психологічної, фізіологічної. Це багатогранний і цінний курс, який допомагає спокійно прожити цей складний час.",
+const reviewScreens = [
+  "/images/with-teenagers-review-01.png",
+  "/images/with-teenagers-review-02.png",
+  "/images/with-teenagers-review-03.png",
+  "/images/with-teenagers-review-04.png",
+  "/images/with-teenagers-review-05.png",
+  "/images/with-teenagers-review-06.png",
 ];
 
 function SectionTitle({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
@@ -73,7 +73,7 @@ export default function WithTeenagersPage() {
 
     <section className="bg-white/70"><div className="mx-auto max-w-[1400px] px-6 py-20 md:px-10 md:py-24"><SectionTitle>Фрагменти зустрічей</SectionTitle><p className="mx-auto mt-5 max-w-3xl text-center text-lg leading-8 text-black">Короткі фрагменти розмов із запрошеними фахівцями. Відео можна подивитися на сторінці або відкрити окремо.</p><div className="mt-12 grid gap-7 lg:grid-cols-2">{videos.map(([name, description, src]) => <article key={src} className="overflow-hidden rounded-[30px] border border-[#16195a]/10 bg-white shadow-[0_16px_48px_rgba(12,18,48,0.08)]"><video controls playsInline preload="metadata" className="aspect-video w-full bg-[#16195a]" aria-label={`${name}: ${description}`}><source src={src} type="video/mp4" />Ваш браузер не підтримує відтворення відео.</video><div className="p-6"><h3 className="text-2xl font-light text-black">{name}</h3><p className="mt-2 leading-7 text-black">{description}</p><a href={src} target="_blank" rel="noreferrer" className="mt-5 inline-flex text-sm font-medium text-[#16195a] underline underline-offset-4">Відкрити відео окремо</a></div></article>)}</div></div></section>
 
-    <section className="mx-auto max-w-[1400px] px-6 py-20 md:px-10 md:py-24"><SectionTitle>Відгуки учасників</SectionTitle><div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">{reviews.map((review, index) => <blockquote key={review} className="rounded-[28px] border border-[#16195a]/10 bg-white p-7 text-lg leading-8 text-black shadow-[0_14px_40px_rgba(12,18,48,0.06)]"><span className="block text-4xl leading-none text-[#16195a]">“</span><p className="mt-3">{review}</p><footer className="mt-5 text-sm font-medium text-black">Учасниця курсу #{index + 1}</footer></blockquote>)}</div></section>
+    <section className="mx-auto max-w-[1400px] px-6 py-20 md:px-10 md:py-24"><SectionTitle>Відгуки учасників</SectionTitle><div className="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-3">{reviewScreens.map((src, index) => <figure key={src} className="overflow-hidden rounded-[28px] border border-[#16195a]/10 bg-white p-3 shadow-[0_14px_40px_rgba(12,18,48,0.06)]"><Image src={src} alt={`Скріншот відгуку учасниці курсу ${index + 1}`} width={1179} height={1277} className="h-auto w-full rounded-[18px]" /></figure>)}</div></section>
 
     <section className="mx-auto max-w-[1200px] px-6 py-20 md:px-10 md:py-24"><SectionTitle>Що зміниться для Вас після курсу?</SectionTitle><p className="mx-auto mt-7 max-w-4xl text-center text-lg leading-8 text-black">Ви не отримаєте чарівної інструкції, як виховати ідеального підлітка. Але отримаєте дещо значно цінніше — більше розуміння, більше опори і більше способів залишатися поруч.</p><div className="mt-12 grid gap-4 md:grid-cols-2">{outcomes.map((outcome) => <div key={outcome} className="rounded-[24px] border border-[#16195a]/10 bg-white p-6 text-lg leading-8 text-black shadow-[0_12px_34px_rgba(12,18,48,0.05)]">→ {outcome}</div>)}</div><p className="mx-auto mt-10 max-w-4xl text-center text-lg leading-8 text-black">І, можливо, найважливіше: Ви не будете самі. Поруч будуть фахівці, інші батьки й простір, у якому можна запитувати, сумніватися й шукати свої відповіді.</p></section>
 

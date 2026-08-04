@@ -737,25 +737,25 @@ export default function FormuleLovePage() {
             </p>
 
             <div className="mx-auto mt-8 grid max-w-[700px] gap-5 sm:grid-cols-2">
-              <div className="rounded-[24px] border border-white/15 bg-white/5 p-3">
+              <div className="flex min-h-[440px] flex-col rounded-[24px] border border-white/15 bg-white/5 p-3 sm:min-h-[540px]">
                 <Image
                   src="/images/formula-love-psychologist.jpg"
                   alt="Психолог Яніна Люта-Животовська"
                   width={960}
                   height={2048}
-                  className="h-auto w-full rounded-[18px]"
+                  className="h-[360px] w-full rounded-[18px] object-cover sm:h-[450px]"
                 />
                 <p className="mt-4 text-base font-medium text-white">
                   Психолог Яніна Люта-Животовська
                 </p>
               </div>
-              <div className="rounded-[24px] border border-white/15 bg-white/5 p-3">
+              <div className="flex min-h-[440px] flex-col rounded-[24px] border border-white/15 bg-white/5 p-3 sm:min-h-[540px]">
                 <Image
                   src="/images/formula-love-priest.jpg"
                   alt="Священик о. Орест Демко"
                   width={612}
                   height={816}
-                  className="h-auto w-full rounded-[18px]"
+                  className="h-[360px] w-full rounded-[18px] object-cover sm:h-[450px]"
                 />
                 <p className="mt-4 text-base font-medium text-white">
                   Священик о. Орест Демко
