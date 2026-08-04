@@ -36,6 +36,9 @@ const videos = [
   ["Юлія Завійська", "Фрагмент зустрічі про підтримку здоров’я підлітка", "/videos/course-with-teenagers-yuliia-zaviiska-web.mp4"],
   ["Христина Комісар-Цар", "Фрагмент зустрічі з урологом-сексопатологом", "/videos/course-with-teenagers-khrystyna-komisar-tsar-web.mp4"],
   ["Людмила Гридковець", "Фрагмент зустрічі про статеве дозрівання підлітка", "/videos/course-with-teenagers-liudmyla-hrydkovets-web.mp4"],
+  ["Владика Максим Рябуха", "Фрагмент зустрічі про віру підлітків", "/videos/course-with-teenagers-maxym-riabukha-web.mp4"],
+  ["о. Михайло Станчишин", "Фрагмент зустрічі про любляче слухання", "/videos/course-with-teenagers-mykhailo-stanchyshyn-web.mp4"],
+  ["Наталя Сиротич", "Фрагмент зустрічі про психологічні особливості підліткового віку", "/videos/course-with-teenagers-nataliia-syrotych-web.mp4"],
 ];
 
 const reviewScreens = [
@@ -83,6 +86,6 @@ export default function WithTeenagersPage() {
 
     <section className="bg-[#f1eee8]"><div className="mx-auto max-w-[1100px] px-6 py-16 md:px-10 md:py-20"><Image src="/images/with-teenagers-footer.jpg" alt="Мама розмовляє з донькою-підлітком" width={1200} height={630} className="h-auto w-full rounded-[32px] shadow-[0_18px_60px_rgba(12,18,48,0.1)]" /></div></section>
 
-    <section className="bg-[#16195a] text-white"><div className="mx-auto max-w-3xl px-6 py-20 text-center md:px-10 md:py-24"><h2 className="text-3xl font-light md:text-5xl">Залишились питання?</h2><p className="mt-7 text-lg text-white">Пишіть</p><div className="mt-10 space-y-3 text-lg"><a className="block hover:opacity-80" href="tel:+380974083750">+38 (097) 408 37 50</a><a className="block hover:opacity-80" href="mailto:iryna.tabaka@gmail.com">iryna.tabaka@gmail.com</a></div></div></section>
+    <section className="bg-[#16195a] text-white"><div className="mx-auto max-w-3xl px-6 py-20 text-center md:px-10 md:py-24"><h2 className="text-3xl font-light md:text-5xl">Залишились питання?</h2><p className="mt-7 text-lg text-white">Пишіть!</p><div className="mt-10 space-y-3 text-lg"><a className="block hover:opacity-80" href="tel:+380974083750">+38 (097) 408 37 50</a><a className="block hover:opacity-80" href="mailto:iryna.tabaka@gmail.com">iryna.tabaka@gmail.com</a></div></div></section>
   </main>;
 }

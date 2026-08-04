@@ -943,7 +943,7 @@ export default function FormuleLovePage() {
           </h2>
 
           <p className="mt-8 text-lg leading-8 text-white/90 md:text-xl">
-            Пишіть
+            Пишіть!
           </p>
 
           <p className="mt-3 text-lg leading-8 text-white/75 md:text-xl">
